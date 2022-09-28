@@ -22,6 +22,9 @@ namespace GUI
             Application.Run(new fAccountInformation());
             //Hello, I'm Hung1.
             //Hello I'm Hung2.
+            //Hello hung1 test ....
+            //fdsfdasfgrhfdlhvdsjds
+            //hfdsfsdjkfdsjfdhlf
         }
     }
 
