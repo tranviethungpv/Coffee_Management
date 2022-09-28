@@ -20,6 +20,7 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new fAccountInformation());
+            //Hello, I'm Hung1.
         }
     }
 
