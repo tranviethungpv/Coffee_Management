@@ -67,11 +67,37 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+    <Compile Include="Properties\fAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\fAccount.Designer.cs">
+      <DependentUpon>fAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Waitform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Waitform.Designer.cs">
+      <DependentUpon>Waitform.cs</DependentUpon>
+=======
     <Compile Include="SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+>>>>>>> bc00fbc3633b7b9331bb4e125d3cbb35ff6be653
     </Compile>
     <Compile Include="fStatistic.cs">
       <SubType>Form</SubType>
@@ -82,6 +108,12 @@
     <EmbeddedResource Include="fAccountInformation.resx">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="Properties\fAccount.resx">
+      <DependentUpon>fAccount.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> bc00fbc3633b7b9331bb4e125d3cbb35ff6be653
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +123,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
@@ -108,6 +141,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-anh-ca-phe-dep_023531182.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_1172719c1774ee6ad29e6969a5c3d6ba7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
