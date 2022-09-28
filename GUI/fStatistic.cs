@@ -1,17 +1,19 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class fStatistic : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public fStatistic()
         {
             InitializeComponent();
         }
