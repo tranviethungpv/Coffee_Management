@@ -62,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartBill)).EndInit();
             this.ResumeLayout(false);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            //test merge;
         }
 
         #endregion
