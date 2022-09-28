@@ -22,6 +22,7 @@ namespace GUI
             Application.Run(new fAccountInformation());
             //Hello, I'm Hung1.
             //Hello I'm Hung2.
+            //Xin chao toi test branch.....
         }
     }
 
