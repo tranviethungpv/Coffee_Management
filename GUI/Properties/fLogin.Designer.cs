@@ -1,6 +1,6 @@
-﻿namespace GUI
+﻿namespace GUI.Properties
 {
-    partial class XtraForm1
+    partial class fLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "XtraForm1";
+            this.Text = "fLogin";
         }
 
         #endregion

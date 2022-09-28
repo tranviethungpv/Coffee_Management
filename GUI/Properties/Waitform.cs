@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.Properties
 {
-    public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
+    public partial class Waitform : DevExpress.XtraEditors.XtraForm
     {
-        public XtraForm1()
+        public Waitform()
         {
             InitializeComponent();
         }
