@@ -117,17 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="hinh-anh-ca-phe-dep_023531182" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hinh-anh-ca-phe-dep_023531182.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelControl1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAJ3RFWHRUaXRsZQBSZWZyZXNo
+        O1JlcGVhdDtCYXJzO1JpYmJvbjtSZWxvYWTNTfbpAAABs0lEQVRYR8WWvU0DQRCFjUQFlpxRAhE04cRy
+        BySIFtwBAZFDp2RUAjktkBNRwPLeaef0Zm9uzZ7EOvjkm9k3b8Z3ez+rlNJFCZM9CZM9CZM9CZM9CZM9
+        CZMRh7fTDXgEr+AT/GR4zBzXqKG2ivq6IAIFV+AJvIN0BmqoZc2ksaH+LiiBeA1eQNSsBmtYO2lOtIcL
+        FAj5L5Y0N1gbngnt4wIFQp7K0vQLHMEWbDI8Zo5rpZ4e7QNAxM1UXvMPsM/rEXtAjdbQY7IxtZcLDIi4
+        o9WI/25ontfn4BDlmaCX02kvFxgQ8bZSk2OxXoOXQ2vp5TTq5QIDIt7barIt1mtwT2gtvZxGvVxgQMQH
+        jJpsivUa3JhaSy+nUS8XGLlITeYG2OX1VnbmNZoqELRcgtYhxuZkPFAgat2Efx2COtfLBQZES27Dc0MM
+        zYn2coEB0ZIHEZkbgnluzkGnvVygQNjyKH4GtyAagvE1sCFdHxcoELa+jL7BPdAh+Ds2NrSPC0ogbn0d
+        c4g7wNqwOdEeLohAQesHyQOYNFXU3wU1UHiZT7L/Jkz2JEz2JEz2JEz2JEz2I61+AZm6piXXgqIcAAAA
+        AElFTkSuQmCC
+</value>
   </data>
-  <data name="pngtree-white-keyboard-coffee-pure-white-desktop-photography-map-image_750305" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-white-keyboard-coffee-pure-white-desktop-photography-map-image_750305.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rsz_1172719c1774ee6ad29e6969a5c3d6ba7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_1172719c1774ee6ad29e6969a5c3d6ba7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redcheck1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\redcheck1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="labelControl2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAIXRFWHRUaXRsZQBBcHBseTtP
+        SztDaGVjaztCYXJzO1JpYmJvbjtkY8hoAAABSklEQVRYR8XQMU4DQRAEQNsBKYh/YSREwiNI+QpPIMSP
+        gAAQD4KAo9u6tXqGvtu15FuCktyjneuRV8Mw/Cs77MkOe7LDnuywpxAenh4XId/faB+FkBdPZfz2FbzC
+        hXYeflBZWADLv2CADzgc0eMALS/4T6x7HODKma9L55IHVMtpqQOayikEPDiF5nIKAY/UOuUWR5VTCHhY
+        3MMznMms5uhyCgGPieU/wA/soOWIyXIIHVkIeHwHpbyoHTFbTtqRhYDH5/AO+jGaOqJaTtqRhTAutB7R
+        VE7akYUgS7UjmstJO7IQ0uLUES/QXE7akYVglqeOUCzfgtvf044sBLcMc0dUy0k7shDc8ohHfIKWf8MN
+        uPeBdmQhuGVxCeUIlt+Ce/eHdmQhuOWER7xBczlpRxaCWzY2ZjZLOzI77MkOe7LDnuywJzvsZ1j9AmxY
+        5LfoXVc8AAAAAElFTkSuQmCC
+</value>
   </data>
 </root>
