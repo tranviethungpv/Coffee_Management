@@ -23,6 +23,7 @@ namespace GUI
             //Hello, I'm Hung1.
             //Hello I'm Hung2.
             //Hello Tu1.
+            //Hello i'm Ky.
         }
     }
 
