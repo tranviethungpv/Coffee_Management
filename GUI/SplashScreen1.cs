@@ -14,7 +14,6 @@ namespace GUI
         public SplashScreen1()
         {
             InitializeComponent();
-            //this.labelCopyright.Text = "Copyright © 1998-" + DateTime.Now.Year.ToString();
         }
 
         #region Overrides
