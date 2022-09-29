@@ -136,6 +136,9 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap Household_Table_icon {
             get {
                 object obj = ResourceManager.GetObject("Household-Table-icon", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
         internal static System.Drawing.Bitmap pngtree_white_keyboard_coffee_pure_white_desktop_photography_map_image_750305 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-white-keyboard-coffee-pure-white-desktop-photography-map-image_750305", resourceCulture);
@@ -147,7 +150,7 @@ namespace GUI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap redcheck1 {
             get {
-                object obj = ResourceManager.GetObject("redcheck1", resourceCulture)
+                object obj = ResourceManager.GetObject("redcheck1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

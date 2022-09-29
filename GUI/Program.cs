@@ -19,11 +19,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fMain());
-            //Hello, I'm Hung1.
-            //Hello I'm Hung2.
-            //Hello Tu1.
-            //Hello i'm Ky.
+            Application.Run(new RibbonForm1());
         }
     }
 
