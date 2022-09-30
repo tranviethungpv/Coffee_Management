@@ -38,31 +38,36 @@
             // 
             // chartBill
             // 
+            this.chartBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartBill.Diagram = xyDiagram1;
-            this.chartBill.Location = new System.Drawing.Point(28, 12);
+            this.chartBill.Location = new System.Drawing.Point(33, 15);
+            this.chartBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartBill.Name = "chartBill";
             series1.Name = "Series 1";
             this.chartBill.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartBill.Size = new System.Drawing.Size(931, 450);
+            this.chartBill.Size = new System.Drawing.Size(714, 471);
             this.chartBill.TabIndex = 0;
             // 
             // fStatistic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 487);
+            this.ClientSize = new System.Drawing.Size(808, 516);
             this.Controls.Add(this.chartBill);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fStatistic";
-            this.Text = "XtraForm1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thống kê";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBill)).EndInit();
             this.ResumeLayout(false);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            //test merge;
+
         }
 
         #endregion
