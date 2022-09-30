@@ -92,18 +92,30 @@
     <Compile Include="fAccountInformation.Designer.cs">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddTable.Designer.cs">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="fBill.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fBill.Designer.cs">
       <DependentUpon>fBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCategory.Designer.cs">
+      <DependentUpon>fCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="fFood.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fFood.Designer.cs">
       <DependentUpon>fFood.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     </Compile>
     <Compile Include="fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTable.Designer.cs">
+      <DependentUpon>fTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,17 +171,26 @@
     <EmbeddedResource Include="fAccountInformation.resx">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fAddTable.resx">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fCategory.resx">
+      <DependentUpon>fCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fFood.resx">
       <DependentUpon>fFood.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTable.resx">
+      <DependentUpon>fTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
