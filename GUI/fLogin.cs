@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using DTO;
 
 namespace GUI
 {
@@ -47,12 +49,22 @@ namespace GUI
 
         private void btn_login_fLogin_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
-            fManager fManager = new fManager();
-            this.Hide();
-            SplashScreenManager.CloseForm();
-            fManager.ShowDialog();
-            this.Show();
+            Account account = new Account(text_login_fLogin.Text, text_password_fLogin.Text);
+            if (Account_BUS.Request.CheckLogin(account))
+            {
+                Account acc = Account_BUS.Request.GetAccountByUserName(account.Username);
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                fManager fManager = new fManager(acc);
+                this.Hide();
+                SplashScreenManager.CloseForm();
+                fManager.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("Thông tin đăng nhập không hợp lệ!","Lỗi",MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 }

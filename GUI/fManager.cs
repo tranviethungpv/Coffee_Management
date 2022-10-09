@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,25 @@ namespace GUI
 {
     public partial class fManager : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private Account acc;
         public fManager()
         {
             InitializeComponent();
+        }
+        public fManager(Account account)
+        {
+            if(account.TypeID == 1)
+            {
+                InitializeComponent();
+                this.acc = account;
+                ribbonPageManager.Visible = true;
+            }
+            else
+            {
+                InitializeComponent();
+                this.acc = account;
+                ribbonPageManager.Visible = false;
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
