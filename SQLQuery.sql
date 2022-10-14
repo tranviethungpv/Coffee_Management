@@ -4,6 +4,7 @@ CREATE DATABASE Coffee_Management
 GO
 USE Coffee_Management
 GO
+
 -- ==================================================================================================================================
 -- CREATE TABLE
 CREATE TABLE AccountType
@@ -228,19 +229,103 @@ GO
 -- ==================================================================================================================================
 -- Start TableFood's Procedures
 -- Delete Table's Food
+create proc USP_DeleteTableFood
+@ID int
+as begin
+	declare @count int = 0
+	select @count = COUNT(*) from TableCoffee where ID = @ID and Status = N'Trống'
 
+	if (@count <> 0)
+	begin
+		declare @BillID int
+		select @BillID = b.ID from Bill as b, TableCoffee as t where b.TableID = t.ID
+
+		delete BillInfo where BillID = @BillID
+		delete Bill where ID = @BillID
+		delete TableCoffee where ID = @ID
+	end
+end
+go
 -- Switch Table
+CREATE PROC USP_SwitchTable
+@TableID1 INT, @TableID2 INT
+AS
+BEGIN
+	DECLARE @isTable1Null INT = 0
+	DECLARE @isTable2Null INT = 0
+	SELECT @isTable1Null = ID FROM dbo.Bill WHERE TableID = @TableID1 AND Status = 0
+	SELECT @isTable2Null = ID FROM dbo.Bill WHERE TableID = @TableID2 AND Status = 0
 
+	IF (@isTable1Null = 0 AND @isTable2Null > 0)
+		BEGIN
+			UPDATE dbo.Bill SET TableID = @TableID1 WHERE ID = @isTable2Null
+			UPDATE dbo.TableCoffee SET Status = N'Có người' WHERE ID = @TableID1
+			UPDATE dbo.TableCoffee SET Status = N'Trống' WHERE ID = @TableID2
+        END
+	ELSE IF (@isTable1Null > 0 AND @isTable2Null = 0)
+		BEGIN
+			UPDATE dbo.Bill SET TableID = @TableID2 WHERE Status = 0 AND ID = @isTable1Null
+			UPDATE dbo.TableCoffee SET Status = N'Có người' WHERE ID = @TableID2
+			UPDATE dbo.TableCoffee SET Status = N'Trống' WHERE ID = @TableID1
+        END
+    ELSE IF (@isTable1Null > 0 AND @isTable2Null > 0)
+		BEGIN
+			UPDATE dbo.Bill SET TableID = @TableID2 WHERE ID = @isTable1Null
+			UPDATE dbo.Bill SET TableID = @TableID1 WHERE ID = @isTable2Null
+        END
+END
+GO
 -- Get all Table
-
+CREATE PROC USP_GetAllTable
+AS
+	SELECT ID, Name FROM dbo.TableCoffee
+GO
 -- Get list Table
-
+CREATE PROC USP_GetListTable
+AS
+	SELECT * FROM dbo.TableCoffee
+GO
 -- Insert Table
-
+CREATE PROC USP_InsertTable
+@Name NVARCHAR(100)
+AS
+	INSERT dbo.TableCoffee ( Name )
+	VALUES  ( @Name )
+GO
 -- Update Table
-
+CREATE PROC USP_UpdateTable
+@ID INT, @Name NVARCHAR(100)
+AS
+	UPDATE dbo.TableCoffee SET Name = @Name WHERE ID = @ID
+GO
 -- Get list TempBill by TableID
-
+CREATE PROC USP_GetListTempBillByTableID
+@TableID INT
+AS
+	SELECT f.Name, bi.Amount, f.Price, f.Price * bi.Amount AS totalPrice
+	FROM dbo.BillInfo bi, dbo.Bill b, dbo.Food f
+	WHERE b.ID = bi.BillID AND bi.FoodID = f.ID AND b.Status = 0 AND b.TableID = @TableID
+GO
 -- Merge Table
+CREATE PROC USP_MergeTable
+@TableID1 INT, @TableID2 INT
+AS
+	BEGIN
+		DECLARE @UnCheckBillID1 INT = -1
+		DECLARE @UnCheckBillID2 INT = -1
+		SELECT @UnCheckBillID1 = ID FROM dbo.Bill WHERE TableID = @TableID1 AND Status = 0
+		SELECT @UnCheckBillID2 = ID FROM dbo.Bill WHERE TableID = @TableID2 AND Status = 0
 
+		IF (@UnCheckBillID1 != -1 AND @UnCheckBillID2 != -1)
+			BEGIN
+				DECLARE @BillInfoID INT
+				SELECT @BillInfoID = ID FROM dbo.BillInfo WHERE BillID = @UnCheckBillID1
+
+				UPDATE dbo.BillInfo SET BillID = @UnCheckBillID2 WHERE ID = @BillInfoID
+				DELETE dbo.Bill WHERE ID = @UnCheckBillID1
+
+				UPDATE dbo.TableCoffee SET STATUS = N'Trống' WHERE ID = @TableID1
+			END
+    END
+GO
 -- End TableFood's Procedures
