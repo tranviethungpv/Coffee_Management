@@ -163,6 +163,11 @@ AS
 	SELECT UserName, DisplayName, TypeID FROM dbo.Account
 GO
 -- Insert Account
+CREATE PROC USP_InsertAccount
+@UserName VARCHAR(100), @DisplayName NVARCHAR(100), @TypeID INT
+AS
+	INSERT dbo.Account ( UserName, DisplayName, TypeID )
+	VALUES  ( @UserName, @DisplayName, @TypeID )
 
 -- Reset password
 
