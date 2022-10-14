@@ -226,5 +226,10 @@ namespace GUI
                     btnSearch.Enabled = false;
       
         }
+
+        private void gvAccount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+
+        }
     }
 }
