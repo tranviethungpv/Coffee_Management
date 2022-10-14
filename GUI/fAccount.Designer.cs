@@ -64,7 +64,7 @@
             this.gcAccount.TabIndex = 0;
             this.gcAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAccount});
-            this.gcAccount.DoubleClick += new System.EventHandler(this.gcAccount_DoubleClick_1);
+            this.gcAccount.DoubleClick += new System.EventHandler(this.gcAccount_DoubleClick);
             // 
             // gvAccount
             // 

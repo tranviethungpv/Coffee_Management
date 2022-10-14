@@ -18,7 +18,7 @@ namespace GUI
 {
     public partial class fAccount : DevExpress.XtraEditors.XtraForm
     {
-        private string loginUserName;
+        private string loginUserName="";
 
         public string LoginUserName
         {
@@ -131,10 +131,7 @@ namespace GUI
             SplashScreenManager.CloseForm();
         }
 
-        private void gcAccount_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
+   
         private void InsertAccount(GridView view, int rowHandle)
         {
             string userName = view.GetRowCellValue(rowHandle, view.Columns[0]).ToString();
@@ -227,9 +224,20 @@ namespace GUI
       
         }
 
+
         private void gvAccount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
 
         }
-    }
+
+
+        private void gcAccount_DoubleClick(object sender, EventArgs e)
+        {
+            if (gvAccount.FocusedRowHandle >= 0)
+                        {
+                            btnRemove.Enabled = true;
+                            btnResetPassword.Enabled = true;
+                        }
+        }  
+}
 }
