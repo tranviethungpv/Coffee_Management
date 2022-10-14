@@ -1,12 +1,8 @@
-﻿using DevExpress.XtraEditors.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAO;
 using DTO;
-using DAO;
+using System;
 using System.Data;
+using System.Linq;
 
 namespace BUS
 {
@@ -44,6 +40,17 @@ namespace BUS
                 throw ex;
             }
             return new Account(table.Rows[0]);
+        }
+        public bool UpdateInformation(string userName, string displayName, string password, string newPass)
+        {
+            try
+            {
+                return Account_DAO.Request.UpdateInformation(userName, displayName, password, newPass);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

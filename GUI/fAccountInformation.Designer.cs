@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.TextEdit txtUserName;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAccountInformation));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -41,25 +40,13 @@
             this.txtReTypePass = new DevExpress.XtraEditors.TextEdit();
             this.btnAccept = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            txtUserName = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(txtUserName.Properties)).BeginInit();
+            this.txtUserName = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDisplayName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNewPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReTypePass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtUserName
-            // 
-            txtUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            txtUserName.Location = new System.Drawing.Point(279, 50);
-            txtUserName.Margin = new System.Windows.Forms.Padding(4);
-            txtUserName.Name = "txtUserName";
-            txtUserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            txtUserName.Properties.Appearance.Options.UseFont = true;
-            txtUserName.Properties.ReadOnly = true;
-            txtUserName.Size = new System.Drawing.Size(255, 30);
-            txtUserName.TabIndex = 5;
             // 
             // labelControl1
             // 
@@ -129,6 +116,7 @@
             this.txtDisplayName.Name = "txtDisplayName";
             this.txtDisplayName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDisplayName.Properties.Appearance.Options.UseFont = true;
+            this.txtDisplayName.Properties.ReadOnly = true;
             this.txtDisplayName.Size = new System.Drawing.Size(255, 30);
             this.txtDisplayName.TabIndex = 6;
             // 
@@ -140,6 +128,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Properties.Appearance.Options.UseFont = true;
+            this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(255, 30);
             this.txtPassword.TabIndex = 7;
             // 
@@ -151,6 +140,7 @@
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPassword.Properties.Appearance.Options.UseFont = true;
+            this.txtNewPassword.Properties.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(255, 30);
             this.txtNewPassword.TabIndex = 8;
             // 
@@ -162,6 +152,7 @@
             this.txtReTypePass.Name = "txtReTypePass";
             this.txtReTypePass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReTypePass.Properties.Appearance.Options.UseFont = true;
+            this.txtReTypePass.Properties.PasswordChar = '*';
             this.txtReTypePass.Size = new System.Drawing.Size(255, 30);
             this.txtReTypePass.TabIndex = 9;
             // 
@@ -176,6 +167,7 @@
             this.btnAccept.Size = new System.Drawing.Size(125, 62);
             this.btnAccept.TabIndex = 10;
             this.btnAccept.Text = "Cập nhật";
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnCancel
             // 
@@ -190,6 +182,18 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtUserName
+            // 
+            this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUserName.Location = new System.Drawing.Point(279, 50);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Properties.Appearance.Options.UseFont = true;
+            this.txtUserName.Properties.ReadOnly = true;
+            this.txtUserName.Size = new System.Drawing.Size(255, 30);
+            this.txtUserName.TabIndex = 12;
+            // 
             // fAccountInformation
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -197,13 +201,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 486);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.txtReTypePass);
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtDisplayName);
-            this.Controls.Add(txtUserName);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -214,11 +218,12 @@
             this.Name = "fAccountInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin tài khoản";
-            ((System.ComponentModel.ISupportInitialize)(txtUserName.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.fAccountInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtDisplayName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNewPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReTypePass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +236,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtUserName;
         private DevExpress.XtraEditors.TextEdit txtDisplayName;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private DevExpress.XtraEditors.TextEdit txtNewPassword;

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
@@ -13,7 +10,7 @@ namespace DAO
         private static DatabaseProvider request = new DatabaseProvider();
         public static DatabaseProvider Request { get => request; set => request = value; }
         public DatabaseProvider() { }
-        private string connectionString = @"Data Source=DESKTOP-VLFN3LR;Initial Catalog=Coffee_Management;Integrated Security=True";
+        private string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Coffee_Management;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable table = new DataTable();

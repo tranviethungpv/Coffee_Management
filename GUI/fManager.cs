@@ -2,13 +2,7 @@
 using DevExpress.XtraEditors;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -22,7 +16,7 @@ namespace GUI
         }
         public fManager(Account account)
         {
-            if(account.TypeID == 1)
+            if (account.TypeID == 1)
             {
                 InitializeComponent();
                 this.acc = account;
@@ -36,14 +30,9 @@ namespace GUI
             }
         }
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-        }
-
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XtraMessageBox.Show("Coffe Management ver 0.0.1","Phiên bản",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show("Coffe Management ver 0.0.1", "Phiên bản", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnLogOut_ItemClick(object sender, ItemClickEventArgs e)
@@ -83,7 +72,7 @@ namespace GUI
             }
             else
             {
-                fAccountInformation f = new fAccountInformation();
+                fAccountInformation f = new fAccountInformation(acc);
                 f.MdiParent = this;
                 f.Show();
             }
