@@ -91,7 +91,6 @@ namespace GUI
                     LoadAcount();
                     SplashScreenManager.CloseForm();
                     XtraMessageBox.Show("Đặt lại mật khẩu thành công\n Mật khẩu mặc định là '0'");
-                    Log.WriteLog("set password for Account: " + userName);
                 }
                 else
                     XtraMessageBox.Show("Đặt lại mật khẩu thất bại", "Lỗi");
@@ -116,7 +115,6 @@ namespace GUI
                     LoadAcount();
                     SplashScreenManager.CloseForm();
                     XtraMessageBox.Show("Xóa tài khoản thành công");
-                    Log.WriteLog("delete Account: " + userName);
                 }
                 else
                     XtraMessageBox.Show("Xóa tài khoản thất bại", "Lỗi");
@@ -171,7 +169,6 @@ namespace GUI
                 LoadAcount();
                 SplashScreenManager.CloseForm();
                 XtraMessageBox.Show("Thêm tài khoản mới thành công\n Mật khẩu mặc định là '0'\n Hãy đổi mật khẩu để bảo mật tài khoản", "Thông báo");
-                Log.WriteLog("add new Account: " + userName);
             }
             else
                 XtraMessageBox.Show("Thêm tài khoản mới thất bại", "Lỗi");

@@ -59,7 +59,6 @@ namespace GUI
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 LoadCategory();
                 SplashScreenManager.CloseForm();
-                Log.WriteLog("add new Category: " + name);
             }
             else
                 XtraMessageBox.Show("Thêm danh mục thất bại", "Lỗi");
@@ -83,10 +82,7 @@ namespace GUI
 
             if (CategoryBUS.Request.UpdateCategory(int.Parse(id), name))
             {
- 
                 LoadCategory();
-                
-                Log.WriteLog("update Category: " + curName + " -> " + name);
             }
             else
                 XtraMessageBox.Show("Sửa danh mục thất bại", "Lỗi");
@@ -122,7 +118,6 @@ namespace GUI
                     LoadCategory();
                     SplashScreenManager.CloseForm();
                     XtraMessageBox.Show("Xóa danh mục thành công", "Thông báo");
-                    Log.WriteLog("delete Category: " + name);
                 }
                 else
                     XtraMessageBox.Show("Xóa danh mục thất bại\nDanh mục được xóa phải rỗng", "Lỗi");

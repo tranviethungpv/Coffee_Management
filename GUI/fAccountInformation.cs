@@ -37,7 +37,6 @@ namespace GUI
                 {
                     SplashScreenManager.CloseForm();
                     XtraMessageBox.Show("Cập nhật thành công");
-                    Log.WriteLog("change account's information");
                 }
                 else
                 {

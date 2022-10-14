@@ -55,7 +55,6 @@ namespace DAO
             }
         }
 
-
         public bool CheckLogin(Account account)
         {
             string query = "USP_Login @UserName , @Password";
