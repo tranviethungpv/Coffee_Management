@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DTO;
+using System;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 
 namespace DAO
 {
@@ -39,6 +36,21 @@ namespace DAO
             {
                 throw ex;
             }
+        }
+        public bool UpdateInformation(string userName, string displayName, string password, string newPass)
+        {
+            string query = "USP_UpdateAccount @UserName , @DisplayName , @Password , @NewPass";
+            int result;
+            try
+            {
+                result = DatabaseProvider.Request.ExecuteNonQuery(query,
+                    new object[] { userName, displayName, password, newPass });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result > 0;
         }
     }
 }

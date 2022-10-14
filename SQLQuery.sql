@@ -167,7 +167,21 @@ GO
 -- Reset password
 
 -- Update Account
-
+CREATE PROC USP_UpdateAccount
+@UserName VARCHAR(100), @DisplayName NVARCHAR(100), @Password VARCHAR(100), @NewPassword VARCHAR(100)
+AS
+BEGIN
+	DECLARE @isRightPass INT = 0
+	SELECT @isRightPass = COUNT(*) FROM Account WHERE UserName = @UserName and Password = @Password
+	IF (@isRightPass = 1)
+	BEGIN
+		IF (@NewPassword = null or @NewPassword = '')
+			UPDATE Account SET DisplayName = @DisplayName WHERE UserName = @UserName
+		ELSE
+			UPDATE Account SET DisplayName = @DisplayName, Password = @NewPassword WHERE UserName = @UserName
+	END
+END
+GO
 -- Delete Account
 
 -- Search Account by Username
