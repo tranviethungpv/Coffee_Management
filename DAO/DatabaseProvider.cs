@@ -13,7 +13,7 @@ namespace DAO
         private static DatabaseProvider request = new DatabaseProvider();
         public static DatabaseProvider Request { get => request; set => request = value; }
         public DatabaseProvider() { }
-        private string connectionString = @"Data Source=DESKTOP-VLFN3LR;Initial Catalog=CoffeeManagement;Integrated Security=True";
+        private string connectionString = @"Data Source=DESKTOP-VLFN3LR;Initial Catalog=Coffee_Management;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable table = new DataTable();

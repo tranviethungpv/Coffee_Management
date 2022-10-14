@@ -83,9 +83,9 @@ namespace GUI
 
             if (CategoryBUS.Request.UpdateCategory(int.Parse(id), name))
             {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
+ 
                 LoadCategory();
-                SplashScreenManager.CloseForm();
+                
                 Log.WriteLog("update Category: " + curName + " -> " + name);
             }
             else
@@ -166,5 +166,7 @@ namespace GUI
             if (gvCategory.GetRowCellValue(gvCategory.FocusedRowHandle, gvCategory.Columns[0]) != null)
                 curName = gvCategory.GetRowCellValue(gvCategory.FocusedRowHandle, gvCategory.Columns[1]).ToString();
         }
+
+        
     }
 }
