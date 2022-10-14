@@ -66,5 +66,24 @@ namespace GUI
                 return;
             }
         }
+        private void checkbox_showPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkbox_showPass.Checked)
+            {
+                text_password_fLogin.Properties.PasswordChar = (char)0;
+            }
+            else
+            {
+                text_password_fLogin.Properties.PasswordChar = '❤';
+            }
+        }
+
+        private void text_password_fLogin_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                btn_login_fLogin.PerformClick();
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLogin));
             this.label_title_fLogin = new DevExpress.XtraEditors.LabelControl();
             this.label_login_fLogin = new DevExpress.XtraEditors.LabelControl();
             this.label_password_fLogin = new DevExpress.XtraEditors.LabelControl();
@@ -35,6 +36,7 @@
             this.text_password_fLogin = new DevExpress.XtraEditors.TextEdit();
             this.btn_login_fLogin = new DevExpress.XtraEditors.SimpleButton();
             this.btn_exit_fLogin = new DevExpress.XtraEditors.SimpleButton();
+            this.checkbox_showPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.text_login_fLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_password_fLogin.Properties)).BeginInit();
             this.SuspendLayout();
@@ -101,8 +103,10 @@
             this.text_password_fLogin.Properties.Appearance.Options.UseBackColor = true;
             this.text_password_fLogin.Properties.Appearance.Options.UseFont = true;
             this.text_password_fLogin.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.text_password_fLogin.Properties.PasswordChar = '❤';
             this.text_password_fLogin.Size = new System.Drawing.Size(226, 26);
             this.text_password_fLogin.TabIndex = 5;
+            this.text_password_fLogin.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.text_password_fLogin_PreviewKeyDown);
             // 
             // btn_login_fLogin
             // 
@@ -110,7 +114,7 @@
             this.btn_login_fLogin.Appearance.ForeColor = System.Drawing.Color.IndianRed;
             this.btn_login_fLogin.Appearance.Options.UseFont = true;
             this.btn_login_fLogin.Appearance.Options.UseForeColor = true;
-            this.btn_login_fLogin.Location = new System.Drawing.Point(111, 223);
+            this.btn_login_fLogin.Location = new System.Drawing.Point(123, 238);
             this.btn_login_fLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_login_fLogin.Name = "btn_login_fLogin";
             this.btn_login_fLogin.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -125,7 +129,7 @@
             this.btn_exit_fLogin.Appearance.ForeColor = System.Drawing.Color.IndianRed;
             this.btn_exit_fLogin.Appearance.Options.UseFont = true;
             this.btn_exit_fLogin.Appearance.Options.UseForeColor = true;
-            this.btn_exit_fLogin.Location = new System.Drawing.Point(235, 223);
+            this.btn_exit_fLogin.Location = new System.Drawing.Point(249, 238);
             this.btn_exit_fLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_exit_fLogin.Name = "btn_exit_fLogin";
             this.btn_exit_fLogin.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -134,6 +138,20 @@
             this.btn_exit_fLogin.Text = "Exit";
             this.btn_exit_fLogin.Click += new System.EventHandler(this.btn_exit_fLogin_Click);
             // 
+            // checkbox_showPass
+            // 
+            this.checkbox_showPass.AutoSize = true;
+            this.checkbox_showPass.BackColor = System.Drawing.Color.Transparent;
+            this.checkbox_showPass.Font = new System.Drawing.Font("Vinhan", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox_showPass.ForeColor = System.Drawing.Color.IndianRed;
+            this.checkbox_showPass.Location = new System.Drawing.Point(166, 201);
+            this.checkbox_showPass.Name = "checkbox_showPass";
+            this.checkbox_showPass.Size = new System.Drawing.Size(138, 24);
+            this.checkbox_showPass.TabIndex = 8;
+            this.checkbox_showPass.Text = "Show password";
+            this.checkbox_showPass.UseVisualStyleBackColor = false;
+            this.checkbox_showPass.CheckedChanged += new System.EventHandler(this.checkbox_showPass_CheckedChanged);
+            // 
             // fLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -141,6 +159,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::GUI.Properties.Resources.pngtree_white_keyboard_coffee_pure_white_desktop_photography_map_image_750305;
             this.ClientSize = new System.Drawing.Size(662, 313);
+            this.Controls.Add(this.checkbox_showPass);
             this.Controls.Add(this.btn_exit_fLogin);
             this.Controls.Add(this.btn_login_fLogin);
             this.Controls.Add(this.text_password_fLogin);
@@ -148,7 +167,7 @@
             this.Controls.Add(this.label_password_fLogin);
             this.Controls.Add(this.label_login_fLogin);
             this.Controls.Add(this.label_title_fLogin);
-            this.IconOptions.Image = global::GUI.Properties.Resources.rsz_1172719c1774ee6ad29e6969a5c3d6ba7;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fLogin.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -169,5 +188,6 @@
         private DevExpress.XtraEditors.TextEdit text_password_fLogin;
         private DevExpress.XtraEditors.SimpleButton btn_login_fLogin;
         private DevExpress.XtraEditors.SimpleButton btn_exit_fLogin;
+        private System.Windows.Forms.CheckBox checkbox_showPass;
     }
 }
