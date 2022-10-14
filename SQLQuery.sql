@@ -189,7 +189,7 @@ BEGIN
 			UPDATE Account SET DisplayName = @DisplayName, Password = @NewPassword WHERE UserName = @UserName
 	END
 END
-
+GO
 -- Delete Account
 CREATE PROC USP_DeleteAccount
 @UserName VARCHAR(100)
@@ -255,6 +255,17 @@ AS
 -- Get list Bill Day for Report
 
 -- Delete Category
+create proc USP_DeleteCategory
+@ID int
+as
+begin
+	declare @FoodCount int = 0
+	select @FoodCount = COUNT(*) from Food where CategoryID = @ID
+
+	if (@FoodCount = 0)
+		delete CategoryFood where ID = @ID
+end
+go
 -- ==================================================================================================================================
 -- Start TableFood's Procedures
 -- Delete Table's Food

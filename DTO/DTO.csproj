@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="AccountType.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
