@@ -28,6 +28,50 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DataTable GetAllAcount()
+        {
+            try
+            {
+                return Account_DAO.Request.GetAllAcount();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool ResetPassword(string userName)
+        {
+            try
+            {
+                return Account_DAO.Request.ResetPassword(userName);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<Account> SearchAccountByUserName(string userName)
+        {
+            List<Account> listAccount = new List<Account>();
+            DataTable table;
+            try
+            {
+                table = Account_DAO.Request.SearchAccountByUserName(userName);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
+                Account account = new Account(row);
+                listAccount.Add(account);
+            }
+            return listAccount;
+        }
         public Account GetAccountByUserName(string userName)
         {
             DataTable table;
@@ -41,6 +85,29 @@ namespace BUS
             }
             return new Account(table.Rows[0]);
         }
+        public bool Delete(string userName)
+        {
+            try
+            {
+                return Account_DAO.Request.Delete(userName);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Insert(string userName, string displayName, int type)
+        {
+            try
+            {
+                return Account_DAO.Request.Insert(userName, displayName, type);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
         public bool UpdateInformation(string userName, string displayName, string password, string newPass)
         {
             try
