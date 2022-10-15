@@ -61,7 +61,6 @@ namespace GUI
                 SplashScreenManager.CloseForm();
                 XtraMessageBox.Show("Thêm bàn mới thành công");
                 int tableID = (int)gvTable.GetRowCellValue(gvTable.RowCount - 1, gvTable.Columns[0]);
-                Log.WriteLog("add new Table, ID = " + tableID);
             }
             else
                 XtraMessageBox.Show("Thêm bàn mới thất bại!", "Lỗi");
@@ -85,7 +84,6 @@ namespace GUI
                     LoadTable();
                     SplashScreenManager.CloseForm();
                     XtraMessageBox.Show("Đã xóa " + name, "Thông báo");
-                    Log.WriteLog("delete Table, ID = " + id);
                 }
                 else
                 {
@@ -121,7 +119,6 @@ namespace GUI
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 LoadTable();
                 SplashScreenManager.CloseForm();
-                Log.WriteLog("update Table: " + curTable + " to " + name);
             }
             else
             {
