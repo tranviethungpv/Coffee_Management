@@ -208,17 +208,52 @@ AS
 -- Start Food's Procedures
 
 -- Get all Food
-
+CREATE PROC USP_GetAllFood
+AS
+	SELECT * FROM dbo.Food
 -- Get list Food by CategoryID
-
+CREATE PROC USP_GetListFoodByCategoryID
+@CategoryID INT
+AS
+	SELECT ID, Name, Price FROM dbo.Food WHERE CategoryID = @CategoryID
 -- Insert Food
-
+CREATE PROC USP_InsertFood
+@Name NVARCHAR(100), @CategoryID INT, @Price INT
+AS
+	INSERT dbo.Food( Name, CategoryID, Price )
+	VALUES  ( @Name, @CategoryID, @Price )
+GO
 -- Update Food
+CREATE PROC USP_UpdateFood
+@ID INT, @Name NVARCHAR(100), @CategoryID INT, @Price INT
+AS
+	DECLARE @BillIDCount INT = 0
+	SELECT @BillIDCount = COUNT(*) FROM Bill AS b, BillInfo AS bi WHERE FoodID = @ID AND b.ID = bi.BillID AND b.Status = 0
 
+	IF (@BillIDCount = 0)
+		UPDATE dbo.Food SET Name = @Name, CategoryID = @CategoryID, Price = @Price WHERE ID = @ID
+GO
 -- Delete Food
+CREATE PROC USP_DeleteFood
+@FoodID INT
+AS
+BEGIN
+	DECLARE @BillIDCount INT = 0
+	SELECT @BillIDCount = COUNT(*) FROM Bill AS b, BillInfo AS bi WHERE FoodID = @FoodID AND b.ID = bi.BillID AND b.Status = 0
 
+	IF (@BillIDCount = 0)
+	BEGIN
+		DELETE BillInfo WHERE FoodID = @FoodID
+		DELETE Food WHERE ID = @FoodID
+	END
+END
+GO
 -- Search Food by Name
-
+CREATE PROC USP_SearchFoodByName
+@Name NVARCHAR(100)
+AS
+	SELECT * FROM dbo.Food WHERE dbo.fuConvertToUnsign1(Name) LIKE N'%' + dbo.fuConvertToUnsign1(@Name) + '%'
+GO
 -- End Food's Procedures
 -- ==================================================================================================================================
 -- Start Bill's Procedures

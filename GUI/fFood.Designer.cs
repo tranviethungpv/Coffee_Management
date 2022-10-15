@@ -86,6 +86,7 @@
             this.btnRemove.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRemove.ImageOptions.LargeImage")));
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            this.btnRemove.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemove_ItemClick);
             // 
             // btnRefresh
             // 
@@ -94,6 +95,7 @@
             this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.Image")));
             this.btnRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.LargeImage")));
             this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -143,6 +145,7 @@
             this.txtSearchFood.Properties.AutoHeight = false;
             this.txtSearchFood.Size = new System.Drawing.Size(180, 36);
             this.txtSearchFood.TabIndex = 4;
+            this.txtSearchFood.TextChanged += new System.EventHandler(this.txtSearchFood_TextChanged);
             // 
             // gcFood
             // 
@@ -159,6 +162,7 @@
             this.gcFood.TabIndex = 10;
             this.gcFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFood});
+            this.gcFood.DoubleClick += new System.EventHandler(this.gcFood_DoubleClick);
             // 
             // gvFood
             // 
@@ -166,6 +170,9 @@
             this.gvFood.GridControl = this.gcFood;
             this.gvFood.Name = "gvFood";
             this.gvFood.NewItemRowText = "Thêm mới";
+            this.gvFood.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gvFood.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvFood_FocusedRowChanged);
+            this.gvFood.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gvFood_ValidateRow);
             // 
             // simpleButton1
             // 
@@ -178,6 +185,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(117, 47);
             this.simpleButton1.TabIndex = 15;
             this.simpleButton1.Text = "Tìm";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // fFood
             // 
