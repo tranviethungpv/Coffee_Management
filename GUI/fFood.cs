@@ -5,13 +5,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSplashScreen;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -23,7 +17,6 @@ namespace GUI
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
             btnRemove.Enabled = false;
-            simpleButton1.Enabled = false;
             LoadFoodToGridControl();
             SplashScreenManager.CloseForm();
         }
@@ -46,7 +39,7 @@ namespace GUI
             RepositoryItemLookUpEdit myLookup = new RepositoryItemLookUpEdit();
             try
             {
-                myLookup.DataSource = CategoryBUS.Request.GetAllCategory();
+                myLookup.DataSource = Category_BUS.Request.GetAllCategory();
                 myLookup.DisplayMember = "Name";
                 myLookup.ValueMember = "ID";
                 myLookup.NullText = "-- Chọn danh mục --";
@@ -57,12 +50,9 @@ namespace GUI
                 XtraMessageBox.Show("Error: " + ex);
             }
         }
-
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             LoadFoodToGridControl();
-            SplashScreenManager.CloseForm();
         }
         private void gvFood_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
@@ -163,13 +153,11 @@ namespace GUI
                 XtraMessageBox.Show("Sửa thông tin món thất bại\n Không thể thay đổi thông tin món hiện hành", "Lỗi");
             }
         }
-
         private void gcFood_DoubleClick(object sender, EventArgs e)
         {
             if (gvFood.FocusedRowHandle >= 0)
                 btnRemove.Enabled = true;
         }
-
         private void btnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int id = (int)gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[0]);
@@ -189,30 +177,6 @@ namespace GUI
             }
             btnRemove.Enabled = false;
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                gcFood.DataSource = Food_BUS.Request.SearchFoodByName(txtSearchFood.Text);
-                SplashScreenManager.CloseForm();
-            }
-            catch (Exception ex)
-            {
-                SplashScreenManager.CloseForm();
-                XtraMessageBox.Show("Error: " + ex);
-            }
-        }
-
-        private void txtSearchFood_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSearchFood.Text != "")
-                simpleButton1.Enabled = true;
-            else
-                simpleButton1.Enabled = false;
-        }
-
         private void gvFood_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
 

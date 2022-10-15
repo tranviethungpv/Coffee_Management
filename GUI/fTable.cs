@@ -10,8 +10,6 @@ namespace GUI
 {
     public partial class fTable : DevExpress.XtraEditors.XtraForm
     {
-        string curTable;
-
         public fTable()
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
@@ -20,7 +18,6 @@ namespace GUI
             barButtonItem2.Enabled = false;
             SplashScreenManager.CloseForm();
         }
-
         private void LoadTable()
         {
             try
@@ -35,7 +32,6 @@ namespace GUI
                 XtraMessageBox.Show("Error: " + ex);
             }
         }
-
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
         mark:
@@ -65,12 +61,10 @@ namespace GUI
             else
                 XtraMessageBox.Show("Thêm bàn mới thất bại!", "Lỗi");
         }
-
         private void gcTable_DoubleClick(object sender, EventArgs e)
         {
             barButtonItem2.Enabled = true;
         }
-
         private void btnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
@@ -93,7 +87,6 @@ namespace GUI
             }
             barButtonItem2.Enabled = false;
         }
-
         private void gvTable_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             GridView view = sender as GridView;
@@ -108,6 +101,7 @@ namespace GUI
             {
                 if (name.Equals(gvTable.GetRowCellValue(i, gvTable.Columns[1]).ToString()))
                 {
+                    string curTable = "";
                     XtraMessageBox.Show("Tên bàn này đã tồn tại!");
                     gvTable.SetRowCellValue(gvTable.FocusedRowHandle, gvTable.Columns[1], curTable);
                     return;
@@ -126,15 +120,9 @@ namespace GUI
                 XtraMessageBox.Show("Sửa thông tin bàn thất bại!!", "Lỗi");
             }
         }
-
-        private void gvTable_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            curTable = gvTable.GetRowCellValue(gvTable.FocusedRowHandle, gvTable.Columns[1]).ToString();
-        }
-
-        private void gvTable_RowCellClick(object sender, RowCellClickEventArgs e)
-        {
-
+            LoadTable();
         }
     }
 }

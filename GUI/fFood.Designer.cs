@@ -38,12 +38,9 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.txtSearchFood = new DevExpress.XtraEditors.TextEdit();
             this.gcFood = new DevExpress.XtraGrid.GridControl();
             this.gvFood = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchFood.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFood)).BeginInit();
             this.SuspendLayout();
@@ -133,32 +130,18 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 444);
             // 
-            // txtSearchFood
-            // 
-            this.txtSearchFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchFood.Location = new System.Drawing.Point(482, 50);
-            this.txtSearchFood.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtSearchFood.MenuManager = this.barManager1;
-            this.txtSearchFood.Name = "txtSearchFood";
-            this.txtSearchFood.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.txtSearchFood.Properties.Appearance.Options.UseForeColor = true;
-            this.txtSearchFood.Properties.AutoHeight = false;
-            this.txtSearchFood.Size = new System.Drawing.Size(180, 36);
-            this.txtSearchFood.TabIndex = 4;
-            this.txtSearchFood.TextChanged += new System.EventHandler(this.txtSearchFood_TextChanged);
-            // 
             // gcFood
             // 
             this.gcFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcFood.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.gcFood.Location = new System.Drawing.Point(0, 109);
+            this.gcFood.Location = new System.Drawing.Point(0, 40);
             this.gcFood.MainView = this.gvFood;
             this.gcFood.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gcFood.MenuManager = this.barManager1;
             this.gcFood.Name = "gcFood";
-            this.gcFood.Size = new System.Drawing.Size(805, 369);
+            this.gcFood.Size = new System.Drawing.Size(805, 438);
             this.gcFood.TabIndex = 10;
             this.gcFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFood});
@@ -174,27 +157,12 @@
             this.gvFood.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvFood_FocusedRowChanged);
             this.gvFood.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gvFood_ValidateRow);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(676, 43);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(117, 47);
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Text = "Tìm";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // fFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 478);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gcFood);
-            this.Controls.Add(this.txtSearchFood);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -203,7 +171,6 @@
             this.Name = "fFood";
             this.Text = "Thực đơn";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchFood.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFood)).EndInit();
             this.ResumeLayout(false);
@@ -221,9 +188,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnRefresh;
-        private DevExpress.XtraEditors.TextEdit txtSearchFood;
         private DevExpress.XtraGrid.GridControl gcFood;
         private DevExpress.XtraGrid.Views.Grid.GridView gvFood;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

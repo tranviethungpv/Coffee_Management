@@ -1,25 +1,17 @@
 ﻿using BUS;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSplashScreen;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using DevExpress.XtraEditors.Repository;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Grid;
 
 namespace GUI
 {
     public partial class fAccount : DevExpress.XtraEditors.XtraForm
     {
-        private string loginUserName="";
-
+        private string loginUserName = "";
         public string LoginUserName
         {
             get { return loginUserName; }
@@ -32,29 +24,13 @@ namespace GUI
             LoadAcount();
             btnRemove.Enabled = false;
             btnResetPassword.Enabled = false;
-            btnSearch.Enabled = false;
             SplashScreenManager.CloseForm();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                gcAccount.DataSource = Account_BUS.Request.SearchAccountByUserName(txtSearchAccount.Text);
-                SplashScreenManager.CloseForm();
-            }
-            catch (Exception ex)
-            {
-                SplashScreenManager.CloseForm();
-                XtraMessageBox.Show("Error: " + ex);
-            }
         }
         private void LoadAcount()
         {
             try
             {
-                gcAccount.DataSource = Account_BUS.Request.GetAllAcount();
+                gcAccount.DataSource = Account_BUS.Request.GetAllAccount();
                 gvAccount.Columns[0].Caption = "Tên đăng nhập";
                 gvAccount.Columns[1].Caption = "Tên hiển thị";
                 gvAccount.Columns[2].Caption = "Loại tài khoản";
@@ -78,7 +54,6 @@ namespace GUI
                 XtraMessageBox.Show("Error: " + ex);
             }
         }
-
         private void btnResetPassword_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string userName = gvAccount.GetRowCellValue(gvAccount.FocusedRowHandle, gvAccount.Columns[0]).ToString();
@@ -97,7 +72,6 @@ namespace GUI
             }
             btnResetPassword.Enabled = false;
         }
-
         private void btnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string userName = gvAccount.GetRowCellValue(gvAccount.FocusedRowHandle, gvAccount.Columns[0]).ToString();
@@ -121,15 +95,6 @@ namespace GUI
             }
             btnRemove.Enabled = false;
         }
-
-        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
-            LoadAcount();
-            SplashScreenManager.CloseForm();
-        }
-
-   
         private void InsertAccount(GridView view, int rowHandle)
         {
             string userName = view.GetRowCellValue(rowHandle, view.Columns[0]).ToString();
@@ -189,7 +154,6 @@ namespace GUI
             }
             return true;
         }
-
         private void gvAccount_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             GridView view = sender as GridView;
@@ -210,31 +174,17 @@ namespace GUI
                 }
             }
         }
-
-        private void txtSearchAccount_TextChanged(object sender, EventArgs e)
-        {
-          
-                if (txtSearchAccount.Text != "")
-                    btnSearch.Enabled = true;
-                else
-                    btnSearch.Enabled = false;
-      
-        }
-
-
         private void gvAccount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
 
         }
-
-
         private void gcAccount_DoubleClick(object sender, EventArgs e)
         {
             if (gvAccount.FocusedRowHandle >= 0)
-                        {
-                            btnRemove.Enabled = true;
-                            btnResetPassword.Enabled = true;
-                        }
-        }  
-}
+            {
+                btnRemove.Enabled = true;
+                btnResetPassword.Enabled = true;
+            }
+        }
+    }
 }

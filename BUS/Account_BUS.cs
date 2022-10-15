@@ -30,11 +30,11 @@ namespace BUS
             }
         }
 
-        public DataTable GetAllAcount()
+        public DataTable GetAllAccount()
         {
             try
             {
-                return Account_DAO.Request.GetAllAcount();
+                return Account_DAO.Request.GetAllAccount();
             }
             catch (Exception ex)
             {
@@ -52,26 +52,6 @@ namespace BUS
             {
                 throw ex;
             }
-        }
-        public List<Account> SearchAccountByUserName(string userName)
-        {
-            List<Account> listAccount = new List<Account>();
-            DataTable table;
-            try
-            {
-                table = Account_DAO.Request.SearchAccountByUserName(userName);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            foreach (DataRow row in table.Rows)
-            {
-                Account account = new Account(row);
-                listAccount.Add(account);
-            }
-            return listAccount;
         }
         public Account GetAccountByUserName(string userName)
         {

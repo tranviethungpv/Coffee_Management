@@ -10,9 +10,7 @@ namespace DAO
         private static Account_DAO request = new Account_DAO();
         public Account_DAO() { }
         public static Account_DAO Request { get => request; set => request = value; }
-
-
-        public DataTable GetAllAcount()
+        public DataTable GetAllAccount()
         {
             try
             {
@@ -23,7 +21,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public bool ResetPassword(string userName)
         {
             string query = string.Format("USP_ResetPassword @UserName");
@@ -38,23 +35,6 @@ namespace DAO
             }
             return result > 0;
         }
-
-        public DataTable SearchAccountByUserName(string userName)
-        {
-
-            string query = string.Format("USP_SearchAccountByUserName @UserName");
-
-            DataTable table = new DataTable();
-            try
-            {
-                return DatabaseProvider.Request.ExecuteQuery(query, new object[] { userName });
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public bool CheckLogin(Account account)
         {
             string query = "USP_Login @UserName , @Password";

@@ -10,7 +10,6 @@ namespace BUS
     public class Food_BUS
     {
         private static Food_BUS request;
-
         public static Food_BUS Request
         {
             get
@@ -20,9 +19,7 @@ namespace BUS
                 return Food_BUS.request;
             }
         }
-
         private Food_BUS() { }
-
         public DataTable GetAllFood()
         {
             try
@@ -34,7 +31,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public DataTable GetListFoodByCategoryID(int categoryID)
         {
             try
@@ -46,38 +42,14 @@ namespace BUS
                 throw ex;
             }
         }
-
-        public List<Food> SearchFoodByName(string name)
-        {
-            DataTable table;
-            try
-            {
-                table = Food_DAO.Request.SearchFoodByName(name);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            List<Food> lstFood = new List<Food>();
-            foreach (DataRow row in table.Rows)
-            {
-                Food food = new Food(row);
-                lstFood.Add(food);
-            }
-            return lstFood;
-        }
-
         public bool InsertFood(Food newFood)
         {
             return Food_DAO.Request.InsertFood(newFood);
         }
-
         public bool UpdateFood(Food food)
         {
             return Food_DAO.Request.UpdateFood(food);
         }
-
         public bool DeleteFood(int ID)
         {
             return Food_DAO.Request.DeleteFood(ID);

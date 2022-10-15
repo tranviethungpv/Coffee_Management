@@ -1,17 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraLayout.Customization;
+﻿using BUS;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSplashScreen;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
-using DevExpress.XtraGrid.Views.Grid;
 
 namespace GUI
 {
@@ -23,16 +16,14 @@ namespace GUI
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
             btnRemove.Enabled = false;
-            btnSearch.Enabled = false;
             LoadCategory();
             SplashScreenManager.CloseForm();
         }
-
         private void LoadCategory()
         {
             try
             {
-                gcCategory.DataSource = CategoryBUS.Request.GetAllCategory();
+                gcCategory.DataSource = Category_BUS.Request.GetAllCategory();
                 gvCategory.Columns[0].Caption = "Mã danh mục";
                 gvCategory.Columns[0].OptionsColumn.AllowEdit = false;
                 gvCategory.Columns[1].Caption = "Tên danh mục";
@@ -42,9 +33,6 @@ namespace GUI
                 XtraMessageBox.Show("Error: " + ex);
             }
         }
-
-        
-
         private void InsertCategory(GridView view, int rowHandle)
         {
             string name = view.GetRowCellValue(rowHandle, view.Columns[1]).ToString();
@@ -54,7 +42,7 @@ namespace GUI
                 return;
             }
 
-            if (CategoryBUS.Request.InsertCategory(name))
+            if (Category_BUS.Request.InsertCategory(name))
             {
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 LoadCategory();
@@ -63,7 +51,6 @@ namespace GUI
             else
                 XtraMessageBox.Show("Thêm danh mục thất bại", "Lỗi");
         }
-
         private void UpdateCategory(GridView view, int rowHandle)
         {
             string id = view.GetRowCellValue(rowHandle, view.Columns[0]).ToString();
@@ -80,21 +67,19 @@ namespace GUI
                 return;
             }
 
-            if (CategoryBUS.Request.UpdateCategory(int.Parse(id), name))
+            if (Category_BUS.Request.UpdateCategory(int.Parse(id), name))
             {
                 LoadCategory();
             }
             else
                 XtraMessageBox.Show("Sửa danh mục thất bại", "Lỗi");
         }
-
         private void gcCategory_DoubleClick(object sender, EventArgs e)
         {
             if (gvCategory.FocusedRowHandle >= 0)
-                    btnRemove.Enabled = true;
-            
-        }
+                btnRemove.Enabled = true;
 
+        }
         private void gvCategory_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             GridView view = sender as GridView;
@@ -104,7 +89,6 @@ namespace GUI
             else
                 UpdateCategory(view, e.RowHandle);
         }
-
         private void btnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string id = gvCategory.GetRowCellValue(gvCategory.FocusedRowHandle, gvCategory.Columns[0]).ToString();
@@ -112,7 +96,7 @@ namespace GUI
 
             if (XtraMessageBox.Show("Xóa danh mục " + name + "?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (CategoryBUS.Request.DeteleCategory(int.Parse(id)))
+                if (Category_BUS.Request.DeleteCategory(int.Parse(id)))
                 {
                     SplashScreenManager.ShowForm(typeof(WaitForm1));
                     LoadCategory();
@@ -124,44 +108,14 @@ namespace GUI
             }
             btnRemove.Enabled = false;
         }
-
-        private void txtSearchCategory_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSearchCategory.Text != "")
-                btnSearch.Enabled = true;
-            else
-                btnSearch.Enabled = false;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            try
-                {
-                    SplashScreenManager.ShowForm(typeof(WaitForm1));
-                    gcCategory.DataSource = CategoryBUS.Request.SearchCategoryByName(txtSearchCategory.Text);
-                    SplashScreenManager.CloseForm();
-                }
-            catch (Exception ex)
-                {
-                    SplashScreenManager.CloseForm();
-                    XtraMessageBox.Show("Error: " + ex);
-                }
-            
-        }
-
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             LoadCategory();
-            SplashScreenManager.CloseForm();
         }
-
         private void gvCategory_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gvCategory.GetRowCellValue(gvCategory.FocusedRowHandle, gvCategory.Columns[0]) != null)
                 curName = gvCategory.GetRowCellValue(gvCategory.FocusedRowHandle, gvCategory.Columns[1]).ToString();
         }
-
-        
     }
 }

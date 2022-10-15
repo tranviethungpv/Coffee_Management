@@ -10,7 +10,6 @@ namespace BUS
     public class TableBUS
     {
         private static TableBUS request;
-
         public static TableBUS Request
         {
             get
@@ -20,7 +19,6 @@ namespace BUS
                 return TableBUS.request;
             }
         }
-
         public DataTable GetAllTable()
         {
             try
@@ -32,7 +30,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public List<Table> GetTableList()
         {
             DataTable table;
@@ -52,7 +49,6 @@ namespace BUS
             }
             return lstTable;
         }
-
         public void SwitchTable(int tableID1, int tableID2)
         {
             try
@@ -64,7 +60,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public void MergeTable(int tableID1, int tableID2)
         {
             try
@@ -76,17 +71,14 @@ namespace BUS
                 throw ex;
             }
         }
-
         public bool InsertTable(string name)
         {
             return TableDAO.Request.InsertTable(name);
         }
-
         public bool UpdateTable(int id, string name)
         {
             return TableDAO.Request.UpdateTable(id, name);
         }
-
         public bool DeleteTable(int id)
         {
             return TableDAO.Request.DeleteTable(id);

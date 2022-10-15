@@ -1,84 +1,63 @@
-﻿using DevExpress.ReportServer.ServiceModel.DataContracts;
+﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAO;
-using DTO;
 
 namespace BUS
 {
-    public class CategoryBUS
+    public class Category_BUS
     {
-        private static CategoryBUS request;
-
-        public static CategoryBUS Request
+        private static Category_BUS request;
+        public static Category_BUS Request
         {
             get
             {
                 if (request == null)
-                    request = new CategoryBUS();
-                return CategoryBUS.request;
+                    request = new Category_BUS();
+                return Category_BUS.request;
             }
         }
-
-        private CategoryBUS() { }
-
+        private Category_BUS() { }
         public DataTable GetAllCategory()
         {
             try
             {
-                return CategoryDAO.Request.GetAllCategory();
+                return Category_DAO.Request.GetAllCategory();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
         public bool InsertCategory(string name)
         {
             try
             {
-                return CategoryDAO.Request.InsertCategory(name);
+                return Category_DAO.Request.InsertCategory(name);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
         public bool UpdateCategory(int id, string name)
         {
             try
             {
-                return CategoryDAO.Request.UpdateCategory(id, name);
+                return Category_DAO.Request.UpdateCategory(id, name);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-        public bool DeteleCategory(int id)
+        public bool DeleteCategory(int id)
         {
             try
             {
-                return CategoryDAO.Request.DeteleCategory(id);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public List<Category> SearchCategoryByName(string name)
-        {
-            try
-            {
-                return CategoryDAO.Request.SearchCategoryByName(name);
+                return Category_DAO.Request.DeleteCategory(id);
             }
             catch (Exception ex)
             {

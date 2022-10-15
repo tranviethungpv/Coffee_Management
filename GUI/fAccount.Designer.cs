@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAccount));
             this.gcAccount = new DevExpress.XtraGrid.GridControl();
             this.gvAccount = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnRemove = new DevExpress.XtraBars.BarButtonItem();
@@ -44,11 +43,9 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.txtSearchAccount = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchAccount.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gcAccount
@@ -56,11 +53,11 @@
             this.gcAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcAccount.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gcAccount.Location = new System.Drawing.Point(0, 105);
+            this.gcAccount.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gcAccount.Location = new System.Drawing.Point(0, 40);
             this.gcAccount.MainView = this.gvAccount;
             this.gcAccount.Name = "gcAccount";
-            this.gcAccount.Size = new System.Drawing.Size(936, 391);
+            this.gcAccount.Size = new System.Drawing.Size(936, 456);
             this.gcAccount.TabIndex = 0;
             this.gcAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAccount});
@@ -78,21 +75,6 @@
             this.gvAccount.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gvAccount.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvAccount_FocusedRowChanged);
             this.gvAccount.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gvAccount_ValidateRow);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSearch.Appearance.Options.UseFont = true;
-            this.btnSearch.Appearance.Options.UseForeColor = true;
-            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(804, 49);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(120, 50);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // barManager1
             // 
@@ -203,17 +185,6 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 440);
             // 
-            // txtSearchAccount
-            // 
-            this.txtSearchAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchAccount.Location = new System.Drawing.Point(605, 56);
-            this.txtSearchAccount.MenuManager = this.barManager1;
-            this.txtSearchAccount.Name = "txtSearchAccount";
-            this.txtSearchAccount.Properties.AutoHeight = false;
-            this.txtSearchAccount.Size = new System.Drawing.Size(193, 39);
-            this.txtSearchAccount.TabIndex = 7;
-            this.txtSearchAccount.TextChanged += new System.EventHandler(this.txtSearchAccount_TextChanged);
-            // 
             // fAccount
             // 
             this.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -222,8 +193,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 496);
-            this.Controls.Add(this.txtSearchAccount);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.gcAccount);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -236,7 +205,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchAccount.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +215,6 @@
 
         private DevExpress.XtraGrid.GridControl gcAccount;
         private DevExpress.XtraGrid.Views.Grid.GridView gvAccount;
-        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem btnRemove;
@@ -259,6 +226,5 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.TextEdit txtSearchAccount;
     }
 }

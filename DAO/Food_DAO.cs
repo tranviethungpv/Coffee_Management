@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DTO;
+using System;
 using System.Data;
-
-using DTO;
 
 namespace DAO
 {
     public class Food_DAO
     {
         private static Food_DAO request;
-
         public static Food_DAO Request
         {
             get
@@ -19,9 +16,7 @@ namespace DAO
                 return Food_DAO.request;
             }
         }
-
         private Food_DAO() { }
-
         public DataTable GetAllFood()
         {
             string query = "USP_GetAllFood";
@@ -34,7 +29,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public DataTable GetListFoodByCategoryID(int categoryID)
         {
             string query = "USP_GetListFoodByCategoryID @CategoryID";
@@ -47,20 +41,6 @@ namespace DAO
                 throw ex;
             }
         }
-
-        public DataTable SearchFoodByName(string name)
-        {
-            string query = string.Format("USP_SearchFoodByName @Name");
-            try
-            {
-                return DatabaseProvider.Request.ExecuteQuery(query, new object[] { name });
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public bool InsertFood(Food newFood)
         {
             string query = string.Format("USP_InsertFood @Name , @CategoryID , @Price");
@@ -76,7 +56,6 @@ namespace DAO
             }
             return result > 0;
         }
-
         public bool UpdateFood(Food food)
         {
             string query = string.Format("USP_UpdateFood @ID , @Name , @CategoryID , @Price");
@@ -92,7 +71,6 @@ namespace DAO
             }
             return result > 0;
         }
-
         public bool DeleteFood(int ID)
         {
             int result;

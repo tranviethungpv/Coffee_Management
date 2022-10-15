@@ -1,30 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DTO;
+using System;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DTO;
 
 namespace DAO
 {
-    public class CategoryDAO
+    public class Category_DAO
     {
-        private static CategoryDAO request;
-
-        public static CategoryDAO Request
+        private static Category_DAO request;
+        public static Category_DAO Request
         {
             get
             {
                 if (request == null)
-                    request = new CategoryDAO();
-                return CategoryDAO.request;
+                    request = new Category_DAO();
+                return Category_DAO.request;
             }
         }
-
-        private CategoryDAO() { }
-
+        private Category_DAO() { }
         public DataTable GetAllCategory()
         {
             try
@@ -36,7 +29,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public Category GetCategoryByID(int categoryID)
         {
             Category category = new Category();
@@ -86,8 +78,7 @@ namespace DAO
             }
             return result > 0;
         }
-
-        public bool DeteleCategory(int id)
+        public bool DeleteCategory(int id)
         {
             string query = string.Format("USP_DeleteCategory @ID");
             int result;
@@ -100,29 +91,6 @@ namespace DAO
                 throw ex;
             }
             return result > 0;
-        }
-
-        public List<Category> SearchCategoryByName(string name)
-        {
-            List<Category> listCategory = new List<Category>();
-            string query = string.Format("select * from CategoryFood where dbo.fuConvertToUnsign1(Name) like N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name);
-
-            DataTable table = new DataTable();
-            try
-            {
-                table = DatabaseProvider.Request.ExecuteQuery(query);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            foreach (DataRow row in table.Rows)
-            {
-                Category category = new Category(row);
-                listCategory.Add(category);
-            }
-            return listCategory;
         }
     }
 }

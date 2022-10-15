@@ -42,12 +42,9 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.gcCategory = new DevExpress.XtraGrid.GridControl();
             this.gvCategory = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.txtSearchCategory = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -159,12 +156,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcCategory.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.gcCategory.Location = new System.Drawing.Point(0, 96);
+            this.gcCategory.Location = new System.Drawing.Point(0, 38);
             this.gcCategory.MainView = this.gvCategory;
             this.gcCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.gcCategory.MenuManager = this.barManager1;
             this.gcCategory.Name = "gcCategory";
-            this.gcCategory.Size = new System.Drawing.Size(888, 359);
+            this.gcCategory.Size = new System.Drawing.Size(888, 417);
             this.gcCategory.TabIndex = 4;
             this.gcCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCategory});
@@ -182,39 +179,11 @@
             this.gvCategory.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCategory_FocusedRowChanged);
             this.gvCategory.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gvCategory_ValidateRow);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Appearance.Options.UseFont = true;
-            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(733, 39);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(144, 50);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearchCategory
-            // 
-            this.txtSearchCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchCategory.Location = new System.Drawing.Point(536, 48);
-            this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txtSearchCategory.MenuManager = this.barManager1;
-            this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Properties.AutoHeight = false;
-            this.txtSearchCategory.Size = new System.Drawing.Size(192, 36);
-            this.txtSearchCategory.TabIndex = 11;
-            this.txtSearchCategory.TextChanged += new System.EventHandler(this.txtSearchCategory_TextChanged);
-            // 
             // fCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 455);
-            this.Controls.Add(this.txtSearchCategory);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.gcCategory);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -227,7 +196,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,10 +212,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnRemove;
         private DevExpress.XtraBars.BarButtonItem btnRefresh;
-        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraGrid.GridControl gcCategory;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCategory;
-        private DevExpress.XtraEditors.TextEdit txtSearchCategory;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

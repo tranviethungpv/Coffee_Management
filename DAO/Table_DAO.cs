@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-
-using DTO;
 
 namespace DAO
 {
@@ -18,9 +15,7 @@ namespace DAO
                 return request;
             }
         }
-
         private TableDAO() { }
-
         public DataTable GetAllTable()
         {
             try
@@ -32,7 +27,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public DataTable GetTableList()
         {
             try
@@ -44,7 +38,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public void SwitchTable(int tableID1, int tableID2)
         {
             try
@@ -56,7 +49,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public void MergeTable(int tableID1, int tableID2)
         {
             try
@@ -68,21 +60,18 @@ namespace DAO
                 throw ex;
             }
         }
-
         public bool InsertTable(string name)
         {
             string query = "USP_InsertTable @Name";
             int result = DatabaseProvider.Request.ExecuteNonQuery(query, new object[] { name });
             return result > 0;
         }
-
         public bool UpdateTable(int id, string name)
         {
             string query = "USP_UpdateTable @ID , @Name";
             int result = DatabaseProvider.Request.ExecuteNonQuery(query, new object[] { id, name });
             return result > 0;
         }
-
         public bool DeleteTable(int id)
         {
             string query = string.Format("USP_DeleteTableFood @ID");

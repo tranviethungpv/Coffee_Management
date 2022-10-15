@@ -57,7 +57,7 @@
   <ItemGroup>
     <Compile Include="AccountType_BUS.cs" />
     <Compile Include="Account_BUS.cs" />
-    <Compile Include="CategoryBUS.cs" />
+    <Compile Include="Category_BUS.cs" />
     <Compile Include="Food_BUS.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
