@@ -164,15 +164,45 @@ AS
 	SELECT UserName, DisplayName, TypeID FROM dbo.Account
 GO
 -- Insert Account
+CREATE PROC USP_InsertAccount
+@UserName VARCHAR(100), @DisplayName NVARCHAR(100), @TypeID INT
+AS
+	INSERT dbo.Account ( UserName, DisplayName, TypeID )
+	VALUES  ( @UserName, @DisplayName, @TypeID )
 
 -- Reset password
-
+CREATE PROC USP_ResetPassword
+@UserName VARCHAR(100)
+AS
+	UPDATE dbo.Account SET Password = '0' WHERE UserName = @UserName
 -- Update Account
-
+CREATE PROC USP_UpdateAccount
+@UserName VARCHAR(100), @DisplayName NVARCHAR(100), @Password VARCHAR(100), @NewPassword VARCHAR(100)
+AS
+BEGIN
+	DECLARE @isRightPass INT = 0
+	SELECT @isRightPass = COUNT(*) FROM Account WHERE UserName = @UserName and Password = @Password
+	IF (@isRightPass = 1)
+	BEGIN
+		IF (@NewPassword = null or @NewPassword = '')
+			UPDATE Account SET DisplayName = @DisplayName WHERE UserName = @UserName
+		ELSE
+			UPDATE Account SET DisplayName = @DisplayName, Password = @NewPassword WHERE UserName = @UserName
+	END
+END
+GO
 -- Delete Account
+CREATE PROC USP_DeleteAccount
+@UserName VARCHAR(100)
+AS
+	DELETE dbo.Account WHERE UserName = @UserName
+GO
 
 -- Search Account by Username
-
+CREATE PROC USP_SearchAccountByUserName
+@UserName VARCHAR(100)
+AS
+	SELECT * FROM dbo.Account WHERE dbo.fuConvertToUnsign1(UserName) LIKE N'%' + dbo.fuConvertToUnsign1(@UserName) + '%'
 -- End Account's Procedures
 -- ==================================================================================================================================
 -- Start Food's Procedures
@@ -226,6 +256,17 @@ GO
 -- Get list Bill Day for Report
 
 -- Delete Category
+create proc USP_DeleteCategory
+@ID int
+as
+begin
+	declare @FoodCount int = 0
+	select @FoodCount = COUNT(*) from Food where CategoryID = @ID
+
+	if (@FoodCount = 0)
+		delete CategoryFood where ID = @ID
+end
+go
 -- ==================================================================================================================================
 -- Start TableFood's Procedures
 -- Delete Table's Food
