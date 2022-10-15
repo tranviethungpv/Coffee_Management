@@ -50,5 +50,13 @@ namespace GUI
         {
 
         }
+
+        private void textEdit1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if(e.KeyValue == 13)
+            {
+                simpleButton1.PerformClick();
+            }
+        }
     }
 }
