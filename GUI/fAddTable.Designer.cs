@@ -86,14 +86,17 @@
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.simpleButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.Image = global::GUI.Properties.Resources.rsz_1172719c1774ee6ad29e6969a5c3d6ba7;
+            this.MaximizeBox = false;
             this.Name = "fAddTable";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm bàn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fAddTable_FormClosing);
             this.Load += new System.EventHandler(this.fAddTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
         }
 
         #endregion

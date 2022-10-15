@@ -167,8 +167,10 @@
             this.Controls.Add(this.label_password_fLogin);
             this.Controls.Add(this.label_login_fLogin);
             this.Controls.Add(this.label_title_fLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fLogin.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximizeBox = false;
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
