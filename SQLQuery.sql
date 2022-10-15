@@ -55,6 +55,7 @@ CREATE TABLE Bill
 	Status INT NOT NULL DEFAULT 0 -- 1: Da thanh toan, 0: Chua thanh toan
 	FOREIGN KEY (TableID) REFERENCES TableCoffee(ID)
 )
+GO
 CREATE TABLE BillInfo
 (
 	ID INT IDENTITY PRIMARY KEY,
@@ -64,6 +65,7 @@ CREATE TABLE BillInfo
 	FOREIGN KEY (BillID) REFERENCES Bill(ID),
 	FOREIGN KEY (FoodID) REFERENCES Food(ID)
 )
+GO
 -- ==================================================================================================================================
 -- INSERT Account
 INSERT AccountType (TypeName) VALUES (N'Quản lý')
@@ -127,6 +129,7 @@ INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Trà sữa Matcha', 5, 2000
 INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Trà sữa Việt quất', 5, 24000)
 INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Capuchino', 5, 25000)
 INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Macchiato', 5, 25000)
+GO
 -- ==================================================================================================================================
 -- INSERT INTO Bill
 INSERT INTO Bill (CheckIn, TableID) VALUES (GETDATE(), 1)
@@ -140,6 +143,7 @@ INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (1, 3, 3)
 INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (2, 2, 1)
 INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (3, 5, 1)
 INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (2, 4, 2)
+GO
 -- ==================================================================================================================================
 -- Start Account's Procedures
 -- Check Login
@@ -169,12 +173,13 @@ CREATE PROC USP_InsertAccount
 AS
 	INSERT dbo.Account ( UserName, DisplayName, TypeID )
 	VALUES  ( @UserName, @DisplayName, @TypeID )
-
+GO
 -- Reset password
 CREATE PROC USP_ResetPassword
 @UserName VARCHAR(100)
 AS
 	UPDATE dbo.Account SET Password = '0' WHERE UserName = @UserName
+GO
 -- Update Account
 CREATE PROC USP_UpdateAccount
 @UserName VARCHAR(100), @DisplayName NVARCHAR(100), @Password VARCHAR(100), @NewPassword VARCHAR(100)
@@ -199,10 +204,11 @@ AS
 GO
 
 -- Search Account by Username
-CREATE PROC USP_SearchAccountByUserName
-@UserName VARCHAR(100)
-AS
-	SELECT * FROM dbo.Account WHERE dbo.fuConvertToUnsign1(UserName) LIKE N'%' + dbo.fuConvertToUnsign1(@UserName) + '%'
+--CREATE PROC USP_SearchAccountByUserName
+--@UserName VARCHAR(100)
+--AS
+--	SELECT * FROM dbo.Account WHERE dbo.fuConvertToUnsign1(UserName) LIKE N'%' + dbo.fuConvertToUnsign1(@UserName) + '%'
+GO
 -- End Account's Procedures
 -- ==================================================================================================================================
 -- Start Food's Procedures
@@ -211,11 +217,13 @@ AS
 CREATE PROC USP_GetAllFood
 AS
 	SELECT * FROM dbo.Food
+GO
 -- Get list Food by CategoryID
 CREATE PROC USP_GetListFoodByCategoryID
 @CategoryID INT
 AS
 	SELECT ID, Name, Price FROM dbo.Food WHERE CategoryID = @CategoryID
+GO
 -- Insert Food
 CREATE PROC USP_InsertFood
 @Name NVARCHAR(100), @CategoryID INT, @Price INT
@@ -249,11 +257,11 @@ BEGIN
 END
 GO
 -- Search Food by Name
-CREATE PROC USP_SearchFoodByName
-@Name NVARCHAR(100)
-AS
-	SELECT * FROM dbo.Food WHERE dbo.fuConvertToUnsign1(Name) LIKE N'%' + dbo.fuConvertToUnsign1(@Name) + '%'
-GO
+--CREATE PROC USP_SearchFoodByName
+--@Name NVARCHAR(100)
+--AS
+--	SELECT * FROM dbo.Food WHERE dbo.fuConvertToUnsign1(Name) LIKE N'%' + dbo.fuConvertToUnsign1(@Name) + '%'
+--GO
 -- End Food's Procedures
 -- ==================================================================================================================================
 -- Start Bill's Procedures
@@ -291,37 +299,37 @@ GO
 -- Get list Bill Day for Report
 
 -- Delete Category
-create proc USP_DeleteCategory
+CREATE PROC USP_DeleteCategory
 @ID int
-as
-begin
-	declare @FoodCount int = 0
-	select @FoodCount = COUNT(*) from Food where CategoryID = @ID
+AS
+BEGIN
+	DECLARE @FoodCount int = 0
+	SELECT @FoodCount = COUNT(*) FROM Food WHERE CategoryID = @ID
 
-	if (@FoodCount = 0)
-		delete CategoryFood where ID = @ID
-end
-go
+	IF (@FoodCount = 0)
+		DELETE CategoryFood WHERE ID = @ID
+END
+GO
 -- ==================================================================================================================================
 -- Start TableFood's Procedures
 -- Delete Table's Food
-create proc USP_DeleteTableFood
+CREATE PROC USP_DeleteTableFood
 @ID int
-as begin
-	declare @count int = 0
-	select @count = COUNT(*) from TableCoffee where ID = @ID and Status = N'Trống'
+AS BEGIN
+	DECLARE @count int = 0
+	SELECT @count = COUNT(*) FROM TableCoffee WHERE ID = @ID AND Status = N'Trống'
 
-	if (@count <> 0)
-	begin
-		declare @BillID int
-		select @BillID = b.ID from Bill as b, TableCoffee as t where b.TableID = t.ID
+	IF (@count <> 0)
+	BEGIN
+		DECLARE @BillID int
+		SELECT @BillID = b.ID FROM Bill AS b, TableCoffee AS t WHERE b.TableID = t.ID
 
-		delete BillInfo where BillID = @BillID
-		delete Bill where ID = @BillID
-		delete TableCoffee where ID = @ID
-	end
-end
-go
+		DELETE BillInfo WHERE BillID = @BillID
+		DELETE Bill WHERE ID = @BillID
+		DELETE TableCoffee WHERE ID = @ID
+	END
+END
+GO
 -- Switch Table
 CREATE PROC USP_SwitchTable
 @TableID1 INT, @TableID2 INT
