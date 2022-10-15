@@ -59,6 +59,7 @@
     <Compile Include="Account_DAO.cs" />
     <Compile Include="CategoryDAO.cs" />
     <Compile Include="DatabaseProvider.cs" />
+    <Compile Include="Food_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
