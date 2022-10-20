@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="AccountType_DAO.cs" />
     <Compile Include="Account_DAO.cs" />
+    <Compile Include="BillInfo_DAO.cs" />
+    <Compile Include="Bill_DAO.cs" />
     <Compile Include="Category_DAO.cs" />
     <Compile Include="DatabaseProvider.cs" />
     <Compile Include="Food_DAO.cs" />
