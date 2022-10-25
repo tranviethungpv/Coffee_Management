@@ -282,14 +282,34 @@ AS
 GO
 -- Get list Bill by Day
 GO
+--CREATE PROC USP_GetListBillByDay
+--@FromDate DATE, @ToDate DATE
+--AS
+--BEGIN
+--	SELECT b.ID, t.Name, CheckIn, discount, TotalPrice
+--	FROM Bill AS b, TableCoffee AS t
+--	WHERE CheckIn >= @FromDate AND CheckIn <= @ToDate AND b.status = 1 AND t.ID = b.TableID
+--END
+--GO
+GO
 CREATE PROC USP_GetListBillByDay
 @FromDate DATE, @ToDate DATE
 AS
 BEGIN
+	declare @frDate nvarchar(30);
+	set @frDate = (select cast( (select CAST(month(@FromDate) as varchar)+'-'+CAST(day(@fromdate) as nvarchar )+'-'+CAST(@FromDate as nvarchar)) as datetime ))
+	declare @tDate nvarchar(30);
+	set @tDate = (select cast( (select CAST(month(@ToDate) as varchar)+'-'+CAST(day(@ToDate) as nvarchar )+'-'+CAST(@ToDate as nvarchar)) as datetime ))
 	SELECT b.ID, t.Name, CheckIn, discount, TotalPrice
 	FROM Bill AS b, TableCoffee AS t
-	WHERE CheckIn >= @FromDate AND CheckIn <= @ToDate AND b.status = 1 AND t.ID = b.TableID
+	WHERE CheckIn>= @frDate and CheckIn< @tDate and b.status = 1 AND t.ID = b.TableID
 END
+	declare @FromDate datetime;
+	set @FromDate = '10/13/2022 12:00:00 AM'
+	declare @frDate nvarchar(30);
+	set @frDate = (select cast( (select CAST(month(@FromDate) as varchar)+'-'+CAST(day(@fromdate) as nvarchar )+'-'+CAST(@FromDate as nvarchar)) as datetime ))
+	declare @tDate nvarchar(30);
+	set @tDate = (select cast( (select CAST(month(@ToDate) as varchar)+'-'+CAST(day(@ToDate) as nvarchar )+'-'+CAST(@ToDate as nvarchar)) as datetime ))
 GO
 -- Delete Bill
 GO

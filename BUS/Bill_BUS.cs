@@ -5,13 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace BUS
 {
     public class Bill_BUS
     {
         private static Bill_BUS request;
-
         public static Bill_BUS Request
         {
             get
