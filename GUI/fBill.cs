@@ -47,7 +47,7 @@ namespace GUI
                     XtraMessageBox.Show("Error: " + ex);
                 }
 
-                if (Bill_BUS.Requeset.DeleteBill(id))
+                if (Bill_BUS.Request.DeleteBill(id))
                 {
                     btnShowBill_Click(sender, e);
                     XtraMessageBox.Show("Xóa hóa đơn thành công", "Thông báo");
@@ -71,7 +71,7 @@ namespace GUI
         {
             try
             {
-                gcBill.DataSource = Bill_BUS.Requeset.GetListBillByDate(fromDate, toDate);
+                gcBill.DataSource = Bill_BUS.Request.GetListBillByDate(fromDate, toDate);
                 gvBill.Columns[0].Caption = "Mã hóa đơn";
                 gvBill.Columns[1].Caption = "Tên bàn";
                 gvBill.Columns[2].Caption = "Ngày vào";
