@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="AccountType.cs" />
+    <Compile Include="Bill.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

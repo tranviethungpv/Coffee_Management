@@ -267,17 +267,67 @@ GO
 -- Start Bill's Procedures
 
 -- Insert Bill
-
+CREATE PROC USP_InsertBill
+@TableID INT
+AS
+	INSERT dbo.Bill (CheckIn, TableID, status, discount) VALUES (GETDATE(), @TableID, 0, 0)
+GO
 -- Get Unchecked BillID by TableID
-
+CREATE PROC GetUnCheckBillIDByTableID
+@TableID INT
+AS
+	SELECT * FROM dbo.Bill WHERE TableID = @TableID AND Status = 0
 -- Get list Bill by Day
+CREATE PROC USP_GetListBillByDay
+@FromDate DATE, @ToDate DATE
+AS
+BEGIN
+	SELECT b.ID, t.Name, CheckIn, discount, TotalPrice
+	FROM Bill AS b, TableCoffee AS t
+	WHERE CheckIn >= @FromDate AND CheckIn <= @ToDate AND b.status = 1 AND t.ID = b.TableID
+END
 
+
+alter PROC USP_GetListBillByDay
+@FromDate DATE, @ToDate DATE
+AS
+BEGIN
+	declare @frDate nvarchar(30);
+	set @frDate = (select cast( (select CAST(month(@FromDate) as varchar)+'-'+CAST(day(@fromdate) as nvarchar )+'-'+CAST(@FromDate as nvarchar)) as datetime ))
+	declare @tDate nvarchar(30);
+	set @tDate = (select cast( (select CAST(month(@ToDate) as varchar)+'-'+CAST(day(@ToDate) as nvarchar )+'-'+CAST(@ToDate as nvarchar)) as datetime ))
+	SELECT b.ID, t.Name, CheckIn, discount, TotalPrice
+	FROM Bill AS b, TableCoffee AS t
+	WHERE CheckIn>= @frDate and CheckIn< @tDate and b.status = 1 AND t.ID = b.TableID
+END
+	declare @FromDate datetime;
+	set @FromDate = '10/13/2022 12:00:00 AM'
+	declare @frDate nvarchar(30);
+	set @frDate = (select cast( (select CAST(month(@FromDate) as varchar)+'-'+CAST(day(@fromdate) as nvarchar )+'-'+CAST(@FromDate as nvarchar)) as datetime ))
+	declare @tDate nvarchar(30);
+	set @tDate = (select cast( (select CAST(month(@ToDate) as varchar)+'-'+CAST(day(@ToDate) as nvarchar )+'-'+CAST(@ToDate as nvarchar)) as datetime ))
+
+
+
+GO
 -- Delete Bill
+CREATE PROC USP_DeleteBill
+@ID INT
+AS
+	DELETE dbo.Bill WHERE ID = @ID
+GO
 
 -- Checkout
 
+CREATE PROC USP_CheckOut
+@ID INT, @Discount INT, @TotalPrice INT
+AS
+	UPDATE dbo.Bill SET Status = 1, Discount = @Discount, TotalPrice = @TotalPrice WHERE ID = @ID
 -- Get max BillID
-
+CREATE PROC USP_GetMaxBillID
+AS
+	SELECT MAX(ID) FROM dbo.Bill
+GO
 -- End Bill's Procedures
 -- ==================================================================================================================================
 -- Start BillInfo's Procedures
