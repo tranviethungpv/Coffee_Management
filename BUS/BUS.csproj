@@ -57,11 +57,14 @@
   <ItemGroup>
     <Compile Include="AccountType_BUS.cs" />
     <Compile Include="Account_BUS.cs" />
+    <Compile Include="BillInfo_BUS.cs" />
+    <Compile Include="Bill_BUS.cs" />
     <Compile Include="Category_BUS.cs" />
     <Compile Include="Food_BUS.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table_BUS.cs" />
+    <Compile Include="TempBill_BUS.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -35,19 +36,20 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.spinEdit2 = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).BeginInit();
@@ -72,11 +74,10 @@
             this.listView1.Location = new System.Drawing.Point(9, 108);
             this.listView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(964, 255);
+            this.listView1.Size = new System.Drawing.Size(961, 257);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -100,8 +101,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.Controls.Add(this.textEdit1);
             this.panel1.Controls.Add(this.labelControl1);
             this.panel1.Controls.Add(this.labelControl3);
@@ -115,22 +114,12 @@
             this.panel1.Controls.Add(this.lookUpEdit2);
             this.panel1.Controls.Add(this.lookUpEdit1);
             this.panel1.Controls.Add(this.listView1);
-            this.panel1.Location = new System.Drawing.Point(2, 3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 530);
+            this.panel1.Size = new System.Drawing.Size(992, 532);
             this.panel1.TabIndex = 1;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textEdit1.Location = new System.Drawing.Point(553, 419);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(155, 28);
-            this.textEdit1.TabIndex = 12;
             // 
             // labelControl1
             // 
@@ -139,10 +128,10 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
-            this.labelControl1.Location = new System.Drawing.Point(83, 396);
+            this.labelControl1.Location = new System.Drawing.Point(83, 398);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(119, 36);
+            this.labelControl1.Size = new System.Drawing.Size(111, 28);
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Đang Chọn";
             // 
@@ -151,7 +140,7 @@
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(276, 422);
+            this.labelControl3.Location = new System.Drawing.Point(290, 424);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(67, 21);
@@ -164,11 +153,11 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl2.ImageOptions.Image")));
-            this.labelControl2.Location = new System.Drawing.Point(83, 433);
+            this.labelControl2.ImageOptions.Image = global::GUI.Properties.Resources.check_1_icon;
+            this.labelControl2.Location = new System.Drawing.Point(83, 435);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(105, 36);
+            this.labelControl2.Size = new System.Drawing.Size(97, 28);
             this.labelControl2.TabIndex = 10;
             this.labelControl2.Text = "Có Người";
             // 
@@ -177,7 +166,7 @@
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(766, 396);
+            this.simpleButton3.Location = new System.Drawing.Point(778, 398);
             this.simpleButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(159, 71);
@@ -188,7 +177,7 @@
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(755, 9);
+            this.simpleButton2.Location = new System.Drawing.Point(778, 12);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(170, 46);
@@ -199,12 +188,40 @@
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(340, 34);
+            this.simpleButton1.Location = new System.Drawing.Point(351, 34);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(156, 54);
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Thêm Món";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(992, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(281, 532);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "check-1-icon.png");
+            this.imageList.Images.SetKeyName(1, "Check-2-icon.png");
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textEdit1.Location = new System.Drawing.Point(564, 421);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Size = new System.Drawing.Size(155, 28);
+            this.textEdit1.TabIndex = 12;
             // 
             // spinEdit2
             // 
@@ -214,7 +231,7 @@
             0,
             0,
             0});
-            this.spinEdit2.Location = new System.Drawing.Point(362, 419);
+            this.spinEdit2.Location = new System.Drawing.Point(373, 421);
             this.spinEdit2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.spinEdit2.Name = "spinEdit2";
             this.spinEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,7 +248,7 @@
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(565, 48);
+            this.spinEdit1.Location = new System.Drawing.Point(585, 48);
             this.spinEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.spinEdit1.Name = "spinEdit1";
             this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,7 +260,7 @@
             // 
             // lookUpEdit3
             // 
-            this.lookUpEdit3.Location = new System.Drawing.Point(755, 63);
+            this.lookUpEdit3.Location = new System.Drawing.Point(778, 64);
             this.lookUpEdit3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lookUpEdit3.Name = "lookUpEdit3";
             this.lookUpEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -279,17 +296,7 @@
             this.lookUpEdit1.Properties.NullText = "-- Chọn danh mục --";
             this.lookUpEdit1.Size = new System.Drawing.Size(217, 28);
             this.lookUpEdit1.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(983, 3);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(290, 530);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
             // fMain
             // 
@@ -338,5 +345,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ImageList imageList;
     }
 }

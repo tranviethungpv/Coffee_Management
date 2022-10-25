@@ -3,19 +3,19 @@ using System.Data;
 
 namespace DAO
 {
-    public class TableDAO
+    public class Table_DAO
     {
-        private static TableDAO request;
-        public static TableDAO Request
+        private static Table_DAO request;
+        public static Table_DAO Request
         {
             get
             {
                 if (request == null)
-                    request = new TableDAO();
+                    request = new Table_DAO();
                 return request;
             }
         }
-        private TableDAO() { }
+        private Table_DAO() { }
         public DataTable GetAllTable()
         {
             try

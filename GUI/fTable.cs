@@ -22,7 +22,7 @@ namespace GUI
         {
             try
             {
-                gcTable.DataSource = TableBUS.Request.GetAllTable();
+                gcTable.DataSource = Table_BUS.Request.GetAllTable();
                 gvTable.Columns[0].Caption = "Mã số";
                 gvTable.Columns[0].OptionsColumn.AllowEdit = false;
                 gvTable.Columns[1].Caption = "Tên bàn";
@@ -50,7 +50,7 @@ namespace GUI
                 }
             }
 
-            if (TableBUS.Request.InsertTable(table))
+            if (Table_BUS.Request.InsertTable(table))
             {
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 LoadTable();
@@ -73,7 +73,7 @@ namespace GUI
 
             if (XtraMessageBox.Show("Xóa " + name + "?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (TableBUS.Request.DeleteTable(id))
+                if (Table_BUS.Request.DeleteTable(id))
                 {
                     LoadTable();
                     SplashScreenManager.CloseForm();
@@ -108,7 +108,7 @@ namespace GUI
                 }
             }
             int id = (int)view.GetRowCellValue(e.RowHandle, view.Columns[0]);
-            if (TableBUS.Request.UpdateTable(id, name))
+            if (Table_BUS.Request.UpdateTable(id, name))
             {
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 LoadTable();

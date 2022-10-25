@@ -267,37 +267,158 @@ GO
 -- Start Bill's Procedures
 
 -- Insert Bill
-
+GO
+CREATE PROC USP_InsertBill
+@TableID INT
+AS
+	INSERT dbo.Bill (CheckIn, TableID, status, discount) VALUES (GETDATE(), @TableID, 0, 0)
+GO
 -- Get Unchecked BillID by TableID
-
+GO
+CREATE PROC GetUnCheckBillIDByTableID
+@TableID INT
+AS
+	SELECT * FROM dbo.Bill WHERE TableID = @TableID AND Status = 0
+GO
 -- Get list Bill by Day
-
+GO
+CREATE PROC USP_GetListBillByDay
+@FromDate DATE, @ToDate DATE
+AS
+BEGIN
+	SELECT b.ID, t.Name, CheckIn, discount, TotalPrice
+	FROM Bill AS b, TableCoffee AS t
+	WHERE CheckIn >= @FromDate AND CheckIn <= @ToDate AND b.status = 1 AND t.ID = b.TableID
+END
+GO
 -- Delete Bill
-
+GO
+CREATE PROC USP_DeleteBill
+@ID INT
+AS
+	DELETE dbo.Bill WHERE ID = @ID
+GO
 -- Checkout
-
+GO
+CREATE PROC USP_CheckOut
+@ID INT, @Discount INT, @TotalPrice INT
+AS
+	UPDATE dbo.Bill SET Status = 1, Discount = @Discount, TotalPrice = @TotalPrice WHERE ID = @ID
+GO
 -- Get max BillID
-
+GO
+CREATE PROC USP_GetMaxBillID
+AS
+	SELECT MAX(ID) FROM dbo.Bill
+GO
 -- End Bill's Procedures
 -- ==================================================================================================================================
 -- Start BillInfo's Procedures
-
 -- Insert BillInfo
+GO
+CREATE PROC USP_InsertBillInfo
+@BillID INT, @FoodID INT, @Amount INT
+AS
+BEGIN
+	DECLARE @isExistBillInfo INT
+	DECLARE @foodAmount INT = 1
 
+	SELECT @isExistBillInfo = ID, @foodAmount = Amount
+	FROM BillInfo
+	WHERE BillID = @BillID AND FoodID = @FoodID
+
+	IF (@isExistBillInfo > 0)
+	BEGIN
+		DECLARE @newAmount INT = @foodAmount + @Amount
+		IF (@newAmount > 0)
+			UPDATE BillInfo SET Amount = @newAmount WHERE FoodID = @FoodID
+		ELSE IF (@newAmount <= 0)
+			DELETE BillInfo WHERE BillID = @BillID AND FoodID = @FoodID
+	END
+	ELSE
+		IF (@Amount > 0)
+			INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (@BillID, @FoodID, @Amount)
+END
+GO
 -- Delete BillInfo by ID
-
+GO
+CREATE PROC USP_DeleteBillInfoByBillID
+@BillID INT
+AS
+	DELETE dbo.BillInfo WHERE BillID = @BillID
+GO
 -- End BillInfo's Procedures
 -- ==================================================================================================================================
 --- ** Some Triggers, Functions
-
 -- Update Bill
+GO
+CREATE TRIGGER UTG_UpdateBill
+ON Bill FOR update
+AS
+BEGIN
+	DECLARE @billID INT
+	SELECT @billID = ID FROM inserted
+	DECLARE @tableID INT
+	SELECT @tableID = TableID FROM Bill WHERE ID = @billID
+	DECLARE @amount INT = 0
+	SELECT @amount = COUNT(*) FROM Bill WHERE TableID = @tableID AND Status = 0
+	if (@amount = 0)
+		UPDATE TableCoffee SET Status = N'Trống' WHERE ID = @tableID
+END
+GO
+-- Update BillInfo
+GO
+CREATE TRIGGER UTG_UpdateBillInfo
+ON BillInfo FOR INSERT
+AS
+BEGIN
+	DECLARE @billID INT
+	SELECT @billID = BillID FROM inserted
 
+	DECLARE @tableID INT
+	SELECT @tableID = TableID FROM Bill WHERE ID = @billID AND Status = 0
+
+	DECLARE @count INT
+	SELECT @count = COUNT(*) FROM BillInfo WHERE BillID = @billID
+
+	IF (@count > 0)
+		UPDATE TableCoffee SET Status = N'Có người' WHERE ID = @tableID
+	else
+		UPDATE TableCoffee SET Status = N'Trống' WHERE ID = @tableID
+END
+GO
 -- Delete BillInfo
+GO
+CREATE TRIGGER UTG_DeleteBillInfo
+ON BillInfo FOR DELETE
+AS
+BEGIN
+	DECLARE @IDBillInfo INT
+	DECLARE @BillID INT
+	SELECT @IDBillInfo = id, @BillID = BillID FROM deleted
 
+	DECLARE @TableID INT
+	SELECT @TableID = TableID FROM Bill WHERE ID = @BillID
+
+	DECLARE @count INT = 0
+	SELECT @count = COUNT(*) FROM BillInfo AS bi, Bill AS b WHERE b.ID = bi.BillID AND b.ID = @BillID AND b.status = 0
+
+	IF (@count = 0)
+		UPDATE TableCoffee SET Status = N'Trống' WHERE ID = @TableID
+END
+GO
 -- Convert to Unsign
-
 -- Get list Bill Day for Report
-
+GO
+CREATE PROC USP_GetListBillByDayForReport
+@FromDate Date, @ToDate Date
+AS
+BEGIN
+	SELECT t.Name, CheckIn, Discount, TotalPrice
+	FROM Bill AS b, TableCoffee AS t
+	WHERE CheckIn >= @FromDate AND CheckIn <= @ToDate AND b.status = 1 AND t.ID = b.TableID
+END
+GO
 -- Delete Category
 CREATE PROC USP_DeleteCategory
 @ID int

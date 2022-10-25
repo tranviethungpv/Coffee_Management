@@ -121,20 +121,17 @@
   <data name="5452421 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5452421 (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-white-keyboard-coffee-pure-white-desktop-photography-map-image_750305" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-white-keyboard-coffee-pure-white-desktop-photography-map-image_750305.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rsz_1172719c1774ee6ad29e6969a5c3d6ba7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_1172719c1774ee6ad29e6969a5c3d6ba7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="5452421 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5452421 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Household-Table-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Household-Table-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Ecommerce-Bill-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ecommerce-Bill-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5452421 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5452421 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,16 +139,22 @@
   <data name="hinh-anh-ca-phe-dep_023531182" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hinh-anh-ca-phe-dep_023531182.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="redcheck1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\redcheck1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-white-keyboard-coffee-pure-white-desktop-photography-map-image_750305" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-white-keyboard-coffee-pure-white-desktop-photography-map-image_750305.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5452421 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5452421 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="5452421" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5452421.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Food-Coffee-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Food-Coffee-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Household-Table-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Household-Table-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redcheck1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\redcheck1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check-1-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check-1-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
