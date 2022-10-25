@@ -1,9 +1,9 @@
-﻿using System;
+﻿using DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAO;
 namespace BUS
 {
     public class BillInfo_BUS
@@ -26,7 +26,7 @@ namespace BUS
         {
             try
             {
-              BillInfo_DAO.Request.InsertBillInfo(billID, foodID, amount);
+                BillInfo_DAO.Request.InsertBillInfo(billID, foodID, amount);
             }
             catch { }
         }

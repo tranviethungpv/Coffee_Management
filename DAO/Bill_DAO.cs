@@ -1,11 +1,10 @@
-﻿
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO;
 namespace DAO
 {
     public class Bill_DAO
@@ -87,7 +86,6 @@ namespace DAO
         {
             try
             {
-
                 return DatabaseProvider.Request.ExecuteQuery("USP_GetListBillByDay @fromDate , @toDate",
                     new object[] { fromDate, toDate });
             }
@@ -109,8 +107,6 @@ namespace DAO
             {
                 throw ex;
             }
-
-
             return result > 0;
         }
     }

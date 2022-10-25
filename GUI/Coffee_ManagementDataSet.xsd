@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Coffee_ManagementDataSet" targetNamespace="http://tempuri.org/Coffee_ManagementDataSet.xsd" xmlns:mstns="http://tempuri.org/Coffee_ManagementDataSet.xsd" xmlns="http://tempuri.org/Coffee_ManagementDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Coffee_ManagementConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Coffee_ManagementConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GUI.Properties.Settings.GlobalReference.Default.Coffee_ManagementConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BillTableAdapter" GeneratorDataComponentClassName="BillTableAdapter" Name="Bill" UserDataComponentName="BillTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Coffee_ManagementConnectionString (Settings)" DbObjectName="Coffee_Management.dbo.Bill" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CheckIn, TotalPrice FROM dbo.Bill</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CheckIn" DataSetColumn="CheckIn" />
+              <Mapping SourceColumn="TotalPrice" DataSetColumn="TotalPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Coffee_ManagementDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Coffee_ManagementDataSet" msprop:Generator_DataSetName="Coffee_ManagementDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bill" msprop:Generator_RowEvHandlerName="BillRowChangeEventHandler" msprop:Generator_RowDeletedName="BillRowDeleted" msprop:Generator_RowDeletingName="BillRowDeleting" msprop:Generator_RowEvArgName="BillRowChangeEvent" msprop:Generator_TablePropName="Bill" msprop:Generator_RowChangedName="BillRowChanged" msprop:Generator_RowChangingName="BillRowChanging" msprop:Generator_TableClassName="BillDataTable" msprop:Generator_RowClassName="BillRow" msprop:Generator_TableVarName="tableBill" msprop:Generator_UserTableName="Bill">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CheckIn" msprop:Generator_ColumnPropNameInRow="CheckIn" msprop:Generator_ColumnPropNameInTable="CheckInColumn" msprop:Generator_ColumnVarNameInTable="columnCheckIn" msprop:Generator_UserColumnName="CheckIn" type="xs:dateTime" />
+              <xs:element name="TotalPrice" msprop:Generator_ColumnPropNameInRow="TotalPrice" msprop:Generator_ColumnPropNameInTable="TotalPriceColumn" msprop:Generator_ColumnVarNameInTable="columnTotalPrice" msprop:Generator_UserColumnName="TotalPrice" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -7,23 +7,23 @@ using DTO;
 
 namespace BUS
 {
-    public class TableBUS
+    public class Table_BUS
     {
-        private static TableBUS request;
-        public static TableBUS Request
+        private static Table_BUS request;
+        public static Table_BUS Request
         {
             get
             {
                 if (request == null)
-                    request = new TableBUS();
-                return TableBUS.request;
+                    request = new Table_BUS();
+                return Table_BUS.request;
             }
         }
         public DataTable GetAllTable()
         {
             try
             {
-                return TableDAO.Request.GetAllTable();
+                return Table_DAO.Request.GetAllTable();
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace BUS
             DataTable table;
             try
             {
-                table = TableDAO.Request.GetTableList();
+                table = Table_DAO.Request.GetTableList();
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace BUS
         {
             try
             {
-                TableDAO.Request.SwitchTable(tableID1, tableID2);
+                Table_DAO.Request.SwitchTable(tableID1, tableID2);
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace BUS
         {
             try
             {
-                TableDAO.Request.MergeTable(tableID1, tableID2);
+                Table_DAO.Request.MergeTable(tableID1, tableID2);
             }
             catch (Exception ex)
             {
@@ -73,15 +73,15 @@ namespace BUS
         }
         public bool InsertTable(string name)
         {
-            return TableDAO.Request.InsertTable(name);
+            return Table_DAO.Request.InsertTable(name);
         }
         public bool UpdateTable(int id, string name)
         {
-            return TableDAO.Request.UpdateTable(id, name);
+            return Table_DAO.Request.UpdateTable(id, name);
         }
         public bool DeleteTable(int id)
         {
-            return TableDAO.Request.DeleteTable(id);
+            return Table_DAO.Request.DeleteTable(id);
         }
     }
 }

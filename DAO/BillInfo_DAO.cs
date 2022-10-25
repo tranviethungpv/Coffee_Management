@@ -34,7 +34,7 @@ namespace DAO
 
         public void DeleteBillInfoByBillID(int billID)
         {
-            string query = string.Format("USP_DeleteBill @BillID");
+            string query = string.Format("USP_DeleteBillInfoByBillID @BillID");
             try
             {
                 DatabaseProvider.Request.ExecuteNonQuery(query, new object[] { billID });
