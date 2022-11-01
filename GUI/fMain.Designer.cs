@@ -36,20 +36,20 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.spinEdit2 = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).BeginInit();
@@ -121,6 +121,17 @@
             this.panel1.Size = new System.Drawing.Size(992, 532);
             this.panel1.TabIndex = 1;
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textEdit1.Location = new System.Drawing.Point(564, 421);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Size = new System.Drawing.Size(155, 28);
+            this.textEdit1.TabIndex = 12;
+            // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -172,6 +183,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(159, 71);
             this.simpleButton3.TabIndex = 8;
             this.simpleButton3.Text = "Thanh Toán";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 
@@ -195,33 +207,6 @@
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Thêm Món";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(992, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(281, 532);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // imageList
-            // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "check-1-icon.png");
-            this.imageList.Images.SetKeyName(1, "Check-2-icon.png");
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textEdit1.Location = new System.Drawing.Point(564, 421);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(155, 28);
-            this.textEdit1.TabIndex = 12;
             // 
             // spinEdit2
             // 
@@ -297,6 +282,22 @@
             this.lookUpEdit1.Size = new System.Drawing.Size(217, 28);
             this.lookUpEdit1.TabIndex = 1;
             this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(992, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(281, 532);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "check-1-icon.png");
+            this.imageList.Images.SetKeyName(1, "Check-2-icon.png");
             // 
             // fMain
             // 

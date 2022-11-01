@@ -9,7 +9,7 @@ namespace GUI
 {
     public partial class fManager : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private Account acc;
+        public static Account acc;
         public fManager()
         {
             InitializeComponent();
@@ -19,13 +19,13 @@ namespace GUI
             if (account.TypeID == 1)
             {
                 InitializeComponent();
-                this.acc = account;
+                fManager.acc = account;
                 ribbonPageManager.Visible = true;
             }
             else
             {
                 InitializeComponent();
-                this.acc = account;
+                fManager.acc = account;
                 ribbonPageManager.Visible = false;
             }
         }
