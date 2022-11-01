@@ -225,5 +225,32 @@ namespace GUI
                 }
             }
         }
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            int id1 = (listView1.Tag as Table).ID;
+            int id2;
+            if (lookUpEdit3.EditValue == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn muốn chuyển");
+                return;
+            }
+            else
+                id2 = (int)lookUpEdit3.EditValue;
+            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn chuyển {0} sang {1}?",
+                (listView1.Tag as Table).Name, lookUpEdit3.Text),
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Table_BUS.Request.SwitchTable(id1, id2);
+                LoadTable();
+                LoadLookUpEditTable();
+                simpleButton2.Enabled = false;
+                foreach (SimpleButton item in flowLayoutPanel1.Controls)
+                    if ((item.Tag as Table).ID == id2)
+                    {
+                        listView1.Tag = item.Tag;
+                        break;
+                    }
+            }
+        }
     }
 }

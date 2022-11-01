@@ -195,6 +195,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(170, 46);
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Text = "Chuyển";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
