@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using System.Globalization;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -41,7 +42,6 @@ namespace GUI
                 button.Click += btn_Click;
                 button.Tag = item;
                 button.ImageList = imageList;
-
                 switch (item.Status)
                 {
                     case "Có người":
@@ -65,7 +65,6 @@ namespace GUI
             {
                 XtraMessageBox.Show("Error: " + ex);
             }
-
             int totalPrice = 0;
             foreach (TempBill item in listTempBill)
             {
@@ -77,7 +76,6 @@ namespace GUI
                 totalPrice += item.Total;
                 listView1.Items.Add(lsvItem);
             }
-
             CultureInfo culture = new CultureInfo("vi-VN");
             // Thread.CurrentThread.CurrentCulture = culture;
             textEdit1.Text = totalPrice.ToString("c", culture);
@@ -94,14 +92,12 @@ namespace GUI
                         currentClickButton.ImageIndex = -1;
                 }
             }
-
             (sender as SimpleButton).ImageIndex = 1;
             int tableID = ((sender as SimpleButton).Tag as Table).ID;
             listView1.Tag = (sender as SimpleButton).Tag;
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
             simpleButton2.Enabled = true;
-
         }
         private void LoadCategory()
         {
@@ -174,6 +170,60 @@ namespace GUI
             ShowBill(table.ID);
             LoadTable();
             LoadLookUpEditTable();
+        }
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            Table table = listView1.Tag as Table;
+            if (table == null)
+                return;
+
+            int billID = -1;
+            try
+            {
+                billID = Bill_BUS.Request.GetUnCheckBillIDByTableID(table.ID);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error: " + ex);
+            }
+
+            int discount = (int)spinEdit2.Value;
+            double totalPrice = Convert.ToDouble(textEdit1.Text.Split(',')[0]) * 1000;
+            double finalPrice = totalPrice - (totalPrice / 100) * discount;
+            if (billID != -1)
+            {
+                if (XtraMessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho {0}?", table.Name),
+                    "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    // Print bill
+                    List<TempBill> lstTempBill = new List<TempBill>();
+                    try
+                    {
+                        lstTempBill = TempBill_BUS.Request.GetListTempBillByTableID(table.ID);
+                    }
+                    catch (Exception ex)
+                    {
+                        XtraMessageBox.Show("Error: " + ex);
+                    }
+                    SplashScreenManager.ShowForm(typeof(WaitForm1));
+                    XtraReport1 report = new XtraReport1();
+                    report.DataSource = lstTempBill;
+                    report.Parameters["Staff"].Value = fManager.acc.DisplayName;
+                    report.Parameters["Table"].Value = table.ID;
+                    report.Parameters["Discount"].Value = discount;
+                    report.Parameters["Date"].Value = DateTime.Now;
+                    report.Parameters["TotalPrice"].Value = finalPrice;
+                    ReportPrintTool tool = new ReportPrintTool(report);
+                    tool.ShowPreview();
+                    SplashScreenManager.CloseForm();
+
+                    // Save bill to database
+                    Bill_BUS.Request.CheckOut(billID, discount, (int)finalPrice);
+                    ShowBill(table.ID);
+                    LoadTable();
+                    LoadLookUpEditTable();
+                }
+            }
         }
     }
 }
