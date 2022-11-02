@@ -17,5 +17,14 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void fStatistic_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'coffee_ManagementDataSet1.CategoryWithPrice' table. You can move, or remove it, as needed.
+            this.categoryWithPriceTableAdapter.Fill(this.coffee_ManagementDataSet1.CategoryWithPrice);
+            // TODO: This line of code loads data into the 'coffee_ManagementDataSet.Bill' table. You can move, or remove it, as needed.
+            this.billTableAdapter.Fill(this.coffee_ManagementDataSet.Bill);
+
+        }
     }
 }

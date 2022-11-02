@@ -167,7 +167,7 @@
             this.btnAccept.Size = new System.Drawing.Size(125, 62);
             this.btnAccept.TabIndex = 10;
             this.btnAccept.Text = "Cập nhật";
-          
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnCancel
             // 
@@ -218,7 +218,6 @@
             this.Name = "fAccountInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin tài khoản";
-           
             ((System.ComponentModel.ISupportInitialize)(this.txtDisplayName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNewPassword.Properties)).EndInit();

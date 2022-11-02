@@ -4,15 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BUS
 {
     public class TempBill_BUS
     {
         private static TempBill_BUS request;
-
         public static TempBill_BUS Request
         {
             get
@@ -22,9 +19,7 @@ namespace BUS
                 return TempBill_BUS.request;
             }
         }
-
         private TempBill_BUS() { }
-
         public List<TempBill> GetListTempBillByTableID(int tableID)
         {
             DataTable table;
@@ -36,7 +31,6 @@ namespace BUS
             {
                 throw ex;
             }
-
             List<TempBill> lstTempBill = new List<TempBill>();
             foreach (DataRow row in table.Rows)
             {

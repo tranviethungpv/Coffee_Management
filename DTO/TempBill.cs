@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -13,7 +10,6 @@ namespace DTO
         public int AmountFood { get; set; }
         public int Price { get; set; }
         public int Total { get; set; }
-
         public TempBill(string foodName, int amount, int price, int totalPrice = 0)
         {
             this.Food = foodName;

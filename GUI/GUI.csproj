@@ -90,6 +90,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coffee_ManagementDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee_ManagementDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Coffee_ManagementDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee_ManagementDataSet11.xsd</DependentUpon>
+    </Compile>
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +240,28 @@
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Coffee_ManagementDataSet1.xsc">
+      <DependentUpon>Coffee_ManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Coffee_ManagementDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Coffee_ManagementDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Coffee_ManagementDataSet1.xss">
+      <DependentUpon>Coffee_ManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Coffee_ManagementDataSet11.xsc">
+      <DependentUpon>Coffee_ManagementDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="Coffee_ManagementDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Coffee_ManagementDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Coffee_ManagementDataSet11.xss">
+      <DependentUpon>Coffee_ManagementDataSet11.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

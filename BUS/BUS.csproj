@@ -61,7 +61,6 @@
     <Compile Include="Bill_BUS.cs" />
     <Compile Include="Category_BUS.cs" />
     <Compile Include="Food_BUS.cs" />
-    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table_BUS.cs" />
     <Compile Include="TempBill_BUS.cs" />

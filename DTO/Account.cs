@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -13,7 +10,6 @@ namespace DTO
         private string password;
         private int typeID;
         private string displayName;
-
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public int TypeID { get => typeID; set => typeID = value; }

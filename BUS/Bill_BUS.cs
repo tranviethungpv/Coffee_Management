@@ -1,10 +1,7 @@
 ﻿using DAO;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace BUS
 {
     public class Bill_BUS
@@ -19,9 +16,7 @@ namespace BUS
                 return Bill_BUS.request;
             }
         }
-
         private Bill_BUS() { }
-
         public int GetUnCheckBillIDByTableID(int id)
         {
             try
@@ -33,7 +28,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public void InsertBill(int tableID)
         {
             try
@@ -42,7 +36,6 @@ namespace BUS
             }
             catch { }
         }
-
         public int GetMaxBillID()
         {
             try
@@ -54,7 +47,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public void CheckOut(int billID, int discount, int totalPrice)
         {
             try
@@ -63,7 +55,6 @@ namespace BUS
             }
             catch { }
         }
-
         public DataTable GetListBillByDate(DateTime fromDate, DateTime toDate)
         {
             try
@@ -75,7 +66,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public bool DeleteBill(int id)
         {
             try

@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
     public class TempBill_DAO
     {
         private static TempBill_DAO request;
-
         public static TempBill_DAO Request
         {
             get
@@ -21,10 +17,8 @@ namespace DAO
             }
         }
         private TempBill_DAO() { }
-
         public DataTable GetListTempBillByTableID(int tableID)
         {
-
             string query = "USP_GetListTempBillByTableID @TableID";
             try
             {

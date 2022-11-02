@@ -8,14 +8,12 @@ namespace DTO
         public string Name { get; set; }
         public int CategoryID { get; set; }
         public int Price { get; set; }
-
         public Food(string name, int categoryID, int price)
         {
             this.Name = name;
             this.CategoryID = categoryID;
             this.Price = price;
         }
-
         public Food(int id, string name, int categoryID, int price)
         {
             this.ID = id;
@@ -23,7 +21,6 @@ namespace DTO
             this.CategoryID = categoryID;
             this.Price = price;
         }
-
         public Food(DataRow row)
         {
             this.ID = (int)row["ID"];

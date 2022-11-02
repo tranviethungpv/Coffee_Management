@@ -1,7 +1,6 @@
 ﻿using DAO;
 using DTO;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -10,7 +9,6 @@ namespace BUS
     public class Account_BUS
     {
         private static Account_BUS request = new Account_BUS();
-
         public static Account_BUS Request { get => request; set => request = value; }
         public Account_BUS() { }
         public bool CheckLogin(Account account)
@@ -19,7 +17,6 @@ namespace BUS
                 return false;
             if (account.Password == "")
                 return false;
-
             try
             {
                 return Account_DAO.Request.CheckLogin(account);
@@ -29,7 +26,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public DataTable GetAllAccount()
         {
             try
@@ -41,7 +37,6 @@ namespace BUS
                 throw ex;
             }
         }
-
         public bool ResetPassword(string userName)
         {
             try
@@ -88,7 +83,6 @@ namespace BUS
                 throw ex;
             }
         }
-        
         public bool UpdateInformation(string userName, string displayName, string password, string newPass)
         {
             try

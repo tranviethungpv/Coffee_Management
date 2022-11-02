@@ -554,3 +554,16 @@ AS
     END
 GO
 -- End TableFood's Procedures
+
+-- Start Statistics'Procedures
+-- Get CategoryWithPrice
+GO
+CREATE VIEW CategoryWithPrice 
+AS
+SELECT CategoryFood.Name, ISNULL(SUM(Bill.TotalPrice),0) AS TotalPrice
+FROM CategoryFood JOIN Food ON CategoryFood.ID = Food.CategoryID
+JOIN BillInfo ON Food.ID = BillInfo.FoodID
+JOIN Bill ON BillInfo.BillID = Bill.ID
+GROUP BY CategoryFood.Name
+GO
+-- End Statistics'Procedures

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -13,7 +10,6 @@ namespace DTO
         public DateTime CheckIn { get; set; }
         public int Status { get; set; }
         public int Discount { get; set; }
-
         public Bill(int id, DateTime checkIn, int status, int discount = 0)
         {
             this.ID = id;
@@ -21,14 +17,11 @@ namespace DTO
             this.Status = status;
             this.Discount = discount;
         }
-
         public Bill(DataRow row)
         {
             this.ID = (int)row["id"];
             this.CheckIn = (DateTime)row["checkIn"];
-
             this.Status = (int)row["status"];
-
             if (row["discount"].ToString() != "")
                 this.Discount = (int)row["discount"];
         }

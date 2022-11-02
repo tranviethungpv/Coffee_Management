@@ -1,16 +1,12 @@
 ﻿using DTO;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace DAO
 {
     public class Bill_DAO
     {
         private static Bill_DAO request;
-
         public static Bill_DAO Request
         {
             get
@@ -20,7 +16,6 @@ namespace DAO
                 return Bill_DAO.request;
             }
         }
-
         private Bill_DAO() { }
 
         /// <summary>
@@ -39,7 +34,6 @@ namespace DAO
             {
                 throw ex;
             }
-
             if (table.Rows.Count > 0)
             {
                 Bill bill = new Bill(table.Rows[0]);
@@ -47,7 +41,6 @@ namespace DAO
             }
             return -1;
         }
-
         public void InsertBill(int tableID)
         {
             try
@@ -59,7 +52,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public int GetMaxBillID()
         {
             try
@@ -71,7 +63,6 @@ namespace DAO
                 return 1;
             }
         }
-
         public void CheckOut(int billID, int discount, int totalPrice)
         {
             string query = "USP_CheckOut @ID , @Discount , @TotalPrice";
@@ -81,7 +72,6 @@ namespace DAO
             }
             catch { }
         }
-
         public DataTable GetListBillByDate(DateTime fromDate, DateTime toDate)
         {
             try
@@ -94,7 +84,6 @@ namespace DAO
                 throw ex;
             }
         }
-
         public bool DeleteBill(int id)
         {
             string query = string.Format("USP_DeleteBill @ID");

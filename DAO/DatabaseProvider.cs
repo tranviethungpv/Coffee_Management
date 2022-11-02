@@ -18,7 +18,6 @@ namespace DAO
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
-
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
@@ -32,14 +31,12 @@ namespace DAO
                         }
                     }
                 }
-
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
                 connection.Close();
             }
             return table;
         }
-
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int row = 0;
@@ -47,7 +44,6 @@ namespace DAO
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
-
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
@@ -66,7 +62,6 @@ namespace DAO
             }
             return row;
         }
-
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
@@ -74,7 +69,6 @@ namespace DAO
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
-
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');

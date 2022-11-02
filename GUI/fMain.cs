@@ -76,9 +76,7 @@ namespace GUI
                 totalPrice += item.Total;
                 listView1.Items.Add(lsvItem);
             }
-            CultureInfo culture = new CultureInfo("vi-VN");
-            // Thread.CurrentThread.CurrentCulture = culture;
-            textEdit1.Text = totalPrice.ToString("c", culture);
+            textEdit1.Text = totalPrice.ToString();
         }
         void btn_Click(object sender, EventArgs e)
         {
@@ -186,9 +184,8 @@ namespace GUI
             {
                 XtraMessageBox.Show("Error: " + ex);
             }
-
             int discount = (int)spinEdit2.Value;
-            double totalPrice = Convert.ToDouble(textEdit1.Text.Split(',')[0]) * 1000;
+            double totalPrice = Convert.ToDouble(textEdit1.Text);
             double finalPrice = totalPrice - (totalPrice / 100) * discount;
             if (billID != -1)
             {

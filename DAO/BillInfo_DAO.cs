@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAO
 {
     public class BillInfo_DAO
     {
         private static BillInfo_DAO request;
-
         public static BillInfo_DAO Request
         {
             get
@@ -19,9 +15,7 @@ namespace DAO
                 return BillInfo_DAO.request;
             }
         }
-
         private BillInfo_DAO() { }
-
         public void InsertBillInfo(int billID, int foodID, int amount)
         {
             string query = "USP_InsertBillInfo @BillID , @FoodID , @Amount";
@@ -31,7 +25,6 @@ namespace DAO
             }
             catch { }
         }
-
         public void DeleteBillInfoByBillID(int billID)
         {
             string query = string.Format("USP_DeleteBillInfoByBillID @BillID");

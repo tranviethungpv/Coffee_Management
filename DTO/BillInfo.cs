@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -13,7 +10,6 @@ namespace DTO
         public int BillID { get; set; }
         public int FoodID { get; set; }
         public int Amount { get; set; }
-
         public BillInfo(int id, int billID, int foodID, int amount)
         {
             this.ID = id;
@@ -21,7 +17,6 @@ namespace DTO
             this.FoodID = foodID;
             this.Amount = amount;
         }
-
         public BillInfo(DataRow row)
         {
             this.ID = (int)row["id"];

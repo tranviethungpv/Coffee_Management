@@ -1,15 +1,11 @@
 ﻿using DAO;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace BUS
 {
     public class BillInfo_BUS
     {
         private static BillInfo_BUS request;
-
         public static BillInfo_BUS Request
         {
             get
@@ -19,9 +15,7 @@ namespace BUS
                 return BillInfo_BUS.request;
             }
         }
-
         private BillInfo_BUS() { }
-
         public void InsertBillInfo(int billID, int foodID, int amount)
         {
             try
@@ -30,7 +24,6 @@ namespace BUS
             }
             catch { }
         }
-
         public void DeleteBillInfoByBillID(int billID)
         {
             try
