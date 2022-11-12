@@ -74,7 +74,7 @@
             this.listView1.Location = new System.Drawing.Point(9, 108);
             this.listView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(961, 257);
+            this.listView1.Size = new System.Drawing.Size(1005, 257);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -118,7 +118,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 532);
+            this.panel1.Size = new System.Drawing.Size(1036, 532);
             this.panel1.TabIndex = 1;
             // 
             // textEdit1
@@ -129,7 +129,7 @@
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(155, 28);
+            this.textEdit1.Size = new System.Drawing.Size(155, 24);
             this.textEdit1.TabIndex = 12;
             // 
             // labelControl1
@@ -142,7 +142,7 @@
             this.labelControl1.Location = new System.Drawing.Point(83, 398);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(111, 28);
+            this.labelControl1.Size = new System.Drawing.Size(99, 28);
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Đang Chọn";
             // 
@@ -154,7 +154,7 @@
             this.labelControl3.Location = new System.Drawing.Point(290, 424);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(67, 21);
+            this.labelControl3.Size = new System.Drawing.Size(52, 17);
             this.labelControl3.TabIndex = 11;
             this.labelControl3.Text = "Giảm Giá";
             // 
@@ -168,7 +168,7 @@
             this.labelControl2.Location = new System.Drawing.Point(83, 435);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(97, 28);
+            this.labelControl2.Size = new System.Drawing.Size(86, 28);
             this.labelControl2.TabIndex = 10;
             this.labelControl2.Text = "Có Người";
             // 
@@ -224,7 +224,7 @@
             this.spinEdit2.Properties.Appearance.Options.UseFont = true;
             this.spinEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit2.Size = new System.Drawing.Size(134, 28);
+            this.spinEdit2.Size = new System.Drawing.Size(134, 24);
             this.spinEdit2.TabIndex = 5;
             // 
             // spinEdit1
@@ -241,7 +241,7 @@
             this.spinEdit1.Properties.Appearance.Options.UseFont = true;
             this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Size = new System.Drawing.Size(134, 28);
+            this.spinEdit1.Size = new System.Drawing.Size(134, 24);
             this.spinEdit1.TabIndex = 4;
             // 
             // lookUpEdit3
@@ -254,7 +254,7 @@
             this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEdit3.Properties.NullText = "-- Chọn bàn --";
-            this.lookUpEdit3.Size = new System.Drawing.Size(170, 28);
+            this.lookUpEdit3.Size = new System.Drawing.Size(170, 24);
             this.lookUpEdit3.TabIndex = 3;
             // 
             // lookUpEdit2
@@ -267,7 +267,7 @@
             this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEdit2.Properties.NullText = "-- Chọn món --";
-            this.lookUpEdit2.Size = new System.Drawing.Size(217, 28);
+            this.lookUpEdit2.Size = new System.Drawing.Size(217, 24);
             this.lookUpEdit2.TabIndex = 2;
             // 
             // lookUpEdit1
@@ -280,17 +280,17 @@
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEdit1.Properties.NullText = "-- Chọn danh mục --";
-            this.lookUpEdit1.Size = new System.Drawing.Size(217, 28);
+            this.lookUpEdit1.Size = new System.Drawing.Size(217, 24);
             this.lookUpEdit1.TabIndex = 1;
             this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(992, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1036, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(281, 532);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(237, 532);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // imageList
@@ -303,7 +303,7 @@
             // fMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1273, 532);
             this.Controls.Add(this.flowLayoutPanel1);
