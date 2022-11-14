@@ -71,7 +71,7 @@
             // 
             // b
             // 
-            this.b.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 25, 23, 25);
+            this.b.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(20);
             this.b.ExpandCollapseItem.Id = 0;
             this.b.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.b.ExpandCollapseItem,
@@ -95,15 +95,15 @@
             this.barButtonItem8,
             this.barButtonItem9});
             this.b.Location = new System.Drawing.Point(0, 0);
-            this.b.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.b.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b.MaxItemId = 20;
             this.b.Name = "b";
-            this.b.OptionsMenuMinWidth = 257;
+            this.b.OptionsMenuMinWidth = 220;
             this.b.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager,
             this.ribbonPage1});
-            this.b.Size = new System.Drawing.Size(859, 181);
+            this.b.Size = new System.Drawing.Size(736, 146);
             this.b.StatusBar = this.ribbonStatusBar;
             // 
             // btnShowForm
@@ -204,6 +204,7 @@
             this.btnStatistic.Caption = "Thống kê";
             this.btnStatistic.Id = 11;
             this.btnStatistic.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnStatistic.ImageOptions.SvgImage")));
+            this.btnStatistic.LargeWidth = 75;
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStatistic_ItemClick);
             // 
@@ -230,6 +231,7 @@
             this.barButtonItem4.Id = 15;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.LargeWidth = 90;
             this.barButtonItem4.Name = "barButtonItem4";
             // 
             // barButtonItem6
@@ -238,6 +240,7 @@
             this.barButtonItem6.Id = 16;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.barButtonItem6.LargeWidth = 90;
             this.barButtonItem6.Name = "barButtonItem6";
             // 
             // barButtonItem7
@@ -246,6 +249,7 @@
             this.barButtonItem7.Id = 17;
             this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
             this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonItem7.LargeWidth = 90;
             this.barButtonItem7.Name = "barButtonItem7";
             // 
             // barButtonItem8
@@ -254,6 +258,7 @@
             this.barButtonItem8.Id = 18;
             this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
             this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.LargeWidth = 90;
             this.barButtonItem8.Name = "barButtonItem8";
             // 
             // barButtonItem9
@@ -262,6 +267,7 @@
             this.barButtonItem9.Id = 19;
             this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
             this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.barButtonItem9.LargeWidth = 90;
             this.barButtonItem9.Name = "barButtonItem9";
             // 
             // ribbonPage
@@ -336,11 +342,11 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 473);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 384);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.b;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(859, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(736, 25);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -348,14 +354,14 @@
             // 
             // fManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 503);
+            this.ClientSize = new System.Drawing.Size(736, 409);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.b);
             this.IconOptions.Image = global::GUI.Properties.Resources.rsz_1172719c1774ee6ad29e6969a5c3d6ba7;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fManager";
             this.Ribbon = this.b;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
