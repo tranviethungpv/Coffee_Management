@@ -186,5 +186,9 @@ namespace GUI
                 btnResetPassword.Enabled = true;
             }
         }
+        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadAcount();
+        }
     }
 }
