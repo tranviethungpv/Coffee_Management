@@ -24,7 +24,7 @@ namespace GUI
         {
             InitializeComponent();
             currentClickButton = null;
-            simpleButton2.Enabled = false;
+            btn_SwitchTable_fMain.Enabled = false;
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             LoadTable();
             LoadCategory();
@@ -33,7 +33,7 @@ namespace GUI
         }
         private void LoadTable()
         {
-            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel_Table_fMain.Controls.Clear();
             List<Table> tableList = Table_BUS.Request.GetTableList();
             foreach (Table item in tableList)
             {
@@ -50,12 +50,12 @@ namespace GUI
                     default:
                         break;
                 }
-                flowLayoutPanel1.Controls.Add(button);
+                flowLayoutPanel_Table_fMain.Controls.Add(button);
             }
         }
         private void ShowBill(int tableID)
         {
-            listView1.Items.Clear();
+            listView_Food_fMain.Items.Clear();
             List<TempBill> listTempBill = new List<TempBill>();
             try
             {
@@ -74,9 +74,9 @@ namespace GUI
                 lsvItem.SubItems.Add(item.Total.ToString());
 
                 totalPrice += item.Total;
-                listView1.Items.Add(lsvItem);
+                listView_Food_fMain.Items.Add(lsvItem);
             }
-            textEdit1.Text = totalPrice.ToString();
+            textEdit_finalPrice_fMain.Text = totalPrice.ToString();
         }
         void btn_Click(object sender, EventArgs e)
         {
@@ -92,55 +92,55 @@ namespace GUI
             }
             (sender as SimpleButton).ImageIndex = 1;
             int tableID = ((sender as SimpleButton).Tag as Table).ID;
-            listView1.Tag = (sender as SimpleButton).Tag;
+            listView_Food_fMain.Tag = (sender as SimpleButton).Tag;
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
-            simpleButton2.Enabled = true;
+            btn_SwitchTable_fMain.Enabled = true;
         }
         private void LoadCategory()
         {
-            lookUpEdit1.Properties.DataSource = Category_BUS.Request.GetAllCategory();
-            lookUpEdit1.Properties.DisplayMember = "Name";
-            lookUpEdit1.Properties.ValueMember = "ID";
+            lookUpEdit_chooseCategory_fMain.Properties.DataSource = Category_BUS.Request.GetAllCategory();
+            lookUpEdit_chooseCategory_fMain.Properties.DisplayMember = "Name";
+            lookUpEdit_chooseCategory_fMain.Properties.ValueMember = "ID";
         }
         private void LoadLookUpEditTable()
         {
-            lookUpEdit3.Properties.DataSource = Table_BUS.Request.GetTableList();
-            lookUpEdit3.Properties.DisplayMember = "Name";
-            lookUpEdit3.Properties.ValueMember = "ID";
+            lookUpEdit_chooseTable_fMain.Properties.DataSource = Table_BUS.Request.GetTableList();
+            lookUpEdit_chooseTable_fMain.Properties.DisplayMember = "Name";
+            lookUpEdit_chooseTable_fMain.Properties.ValueMember = "ID";
         }
         private void GetListFoodByCategory(int categoryID)
         {
-            lookUpEdit2.Properties.DataSource = Food_BUS.Request.GetListFoodByCategoryID(categoryID);
-            lookUpEdit2.Properties.DisplayMember = "Name";
-            lookUpEdit2.Properties.ValueMember = "ID";
+            lookUpEdit_chooseFood_fMain.Properties.DataSource = Food_BUS.Request.GetListFoodByCategoryID(categoryID);
+            lookUpEdit_chooseFood_fMain.Properties.DisplayMember = "Name";
+            lookUpEdit_chooseFood_fMain.Properties.ValueMember = "ID";
         }
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            int id = (int)lookUpEdit1.EditValue;
+            int id = (int)lookUpEdit_chooseCategory_fMain.EditValue;
             GetListFoodByCategory(id);
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Table table = listView1.Tag as Table;
+            Table table = listView_Food_fMain.Tag as Table;
             if (table == null)
             {
                 XtraMessageBox.Show("Hãy chọn bàn");
                 return;
             }
 
-            if (spinEdit1.Value == 0)
+            if (spinEdit_Amount_fMain.Value == 0)
                 return;
-            int amount = (int)spinEdit1.Value;
+            int amount = (int)spinEdit_Amount_fMain.Value;
 
             int billID = Bill_BUS.Request.GetUnCheckBillIDByTableID(table.ID);
 
-            if (lookUpEdit2.EditValue == null)
+            if (lookUpEdit_chooseFood_fMain.EditValue == null)
             {
                 XtraMessageBox.Show("Hãy chọn món");
                 return;
             }
-            int foodID = (int)lookUpEdit2.EditValue;
+            int foodID = (int)lookUpEdit_chooseFood_fMain.EditValue;
 
             if (billID == -1)
             {
@@ -171,7 +171,7 @@ namespace GUI
         }
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            Table table = listView1.Tag as Table;
+            Table table = listView_Food_fMain.Tag as Table;
             if (table == null)
                 return;
 
@@ -184,8 +184,8 @@ namespace GUI
             {
                 XtraMessageBox.Show("Error: " + ex);
             }
-            int discount = (int)spinEdit2.Value;
-            double totalPrice = Convert.ToDouble(textEdit1.Text);
+            int discount = (int)spinEdit_Discount_fMain.Value;
+            double totalPrice = Convert.ToDouble(textEdit_finalPrice_fMain.Text);
             double finalPrice = totalPrice - (totalPrice / 100) * discount;
             if (billID != -1)
             {
@@ -224,27 +224,27 @@ namespace GUI
         }
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            int id1 = (listView1.Tag as Table).ID;
+            int id1 = (listView_Food_fMain.Tag as Table).ID;
             int id2;
-            if (lookUpEdit3.EditValue == null)
+            if (lookUpEdit_chooseTable_fMain.EditValue == null)
             {
                 XtraMessageBox.Show("Hãy chọn bàn muốn chuyển");
                 return;
             }
             else
-                id2 = (int)lookUpEdit3.EditValue;
+                id2 = (int)lookUpEdit_chooseTable_fMain.EditValue;
             if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn chuyển {0} sang {1}?",
-                (listView1.Tag as Table).Name, lookUpEdit3.Text),
+                (listView_Food_fMain.Tag as Table).Name, lookUpEdit_chooseTable_fMain.Text),
                 "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 Table_BUS.Request.SwitchTable(id1, id2);
                 LoadTable();
                 LoadLookUpEditTable();
-                simpleButton2.Enabled = false;
-                foreach (SimpleButton item in flowLayoutPanel1.Controls)
+                btn_SwitchTable_fMain.Enabled = false;
+                foreach (SimpleButton item in flowLayoutPanel_Table_fMain.Controls)
                     if ((item.Tag as Table).ID == id2)
                     {
-                        listView1.Tag = item.Tag;
+                        listView_Food_fMain.Tag = item.Tag;
                         break;
                     }
             }

@@ -132,18 +132,10 @@ INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Macchiato', 5, 25000)
 GO
 -- ==================================================================================================================================
 -- INSERT INTO Bill
-INSERT INTO Bill (CheckIn, TableID) VALUES (GETDATE(), 1)
-INSERT INTO Bill (CheckIn, TableID) VALUES (GETDATE(), 2)
-INSERT INTO Bill (CheckIn, TableID) VALUES (GETDATE(), 3)
-GO
+
 -- ==================================================================================================================================
 -- INSERT INTO BillInfo
-INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (1, 1, 2)
-INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (1, 3, 3)
-INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (2, 2, 1)
-INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (3, 5, 1)
-INSERT INTO BillInfo (BillID, FoodID, Amount) VALUES (2, 4, 2)
-GO
+
 -- ==================================================================================================================================
 -- Start Account's Procedures
 -- Check Login
