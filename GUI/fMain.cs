@@ -115,61 +115,7 @@ namespace GUI
             lookUpEdit_chooseFood_fMain.Properties.DisplayMember = "Name";
             lookUpEdit_chooseFood_fMain.Properties.ValueMember = "ID";
         }
-        private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            int id = (int)lookUpEdit_chooseCategory_fMain.EditValue;
-            GetListFoodByCategory(id);
-        }
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            Table table = listView_Food_fMain.Tag as Table;
-            if (table == null)
-            {
-                XtraMessageBox.Show("Hãy chọn bàn");
-                return;
-            }
-
-            if (spinEdit_Amount_fMain.Value == 0)
-                return;
-            int amount = (int)spinEdit_Amount_fMain.Value;
-
-            int billID = Bill_BUS.Request.GetUnCheckBillIDByTableID(table.ID);
-
-            if (lookUpEdit_chooseFood_fMain.EditValue == null)
-            {
-                XtraMessageBox.Show("Hãy chọn món");
-                return;
-            }
-            int foodID = (int)lookUpEdit_chooseFood_fMain.EditValue;
-
-            if (billID == -1)
-            {
-                try
-                {
-                    Bill_BUS.Request.InsertBill(table.ID);
-                    BillInfo_BUS.Request.InsertBillInfo(Bill_BUS.Request.GetMaxBillID(), foodID, amount);
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show("Error: " + ex);
-                }
-            }
-            else
-            {
-                try
-                {
-                    BillInfo_BUS.Request.InsertBillInfo(billID, foodID, amount);
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show("Eror: " + ex);
-                }
-            }
-            ShowBill(table.ID);
-            LoadTable();
-            LoadLookUpEditTable();
-        }
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void btn_Pay_fMain_Click(object sender, EventArgs e)
         {
             Table table = listView_Food_fMain.Tag as Table;
             if (table == null)
@@ -222,7 +168,61 @@ namespace GUI
                 }
             }
         }
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void btn_AddFood_fMain_Click(object sender, EventArgs e)
+        {
+            Table table = listView_Food_fMain.Tag as Table;
+            if (table == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn");
+                return;
+            }
+
+            if (spinEdit_Amount_fMain.Value == 0)
+                return;
+            int amount = (int)spinEdit_Amount_fMain.Value;
+
+            int billID = Bill_BUS.Request.GetUnCheckBillIDByTableID(table.ID);
+
+            if (lookUpEdit_chooseFood_fMain.EditValue == null)
+            {
+                XtraMessageBox.Show("Hãy chọn món");
+                return;
+            }
+            int foodID = (int)lookUpEdit_chooseFood_fMain.EditValue;
+
+            if (billID == -1)
+            {
+                try
+                {
+                    Bill_BUS.Request.InsertBill(table.ID);
+                    BillInfo_BUS.Request.InsertBillInfo(Bill_BUS.Request.GetMaxBillID(), foodID, amount);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Error: " + ex);
+                }
+            }
+            else
+            {
+                try
+                {
+                    BillInfo_BUS.Request.InsertBillInfo(billID, foodID, amount);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Eror: " + ex);
+                }
+            }
+            ShowBill(table.ID);
+            LoadTable();
+            LoadLookUpEditTable();
+        }
+        private void lookUpEdit_chooseCategory_fMain_EditValueChanged(object sender, EventArgs e)
+        {
+            int id = (int)lookUpEdit_chooseCategory_fMain.EditValue;
+            GetListFoodByCategory(id);
+        }
+        private void btn_SwitchTable_fMain_Click(object sender, EventArgs e)
         {
             int id1 = (listView_Food_fMain.Tag as Table).ID;
             int id2;

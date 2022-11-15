@@ -138,7 +138,7 @@
             this.label_currentChoosing_fMain.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_currentChoosing_fMain.Appearance.Options.UseFont = true;
             this.label_currentChoosing_fMain.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.label_currentChoosing_fMain.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
+            this.label_currentChoosing_fMain.ImageOptions.Image = global::GUI.Properties.Resources.Check_2_icon;
             this.label_currentChoosing_fMain.Location = new System.Drawing.Point(83, 398);
             this.label_currentChoosing_fMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.label_currentChoosing_fMain.Name = "label_currentChoosing_fMain";
@@ -183,7 +183,7 @@
             this.btn_Pay_fMain.Size = new System.Drawing.Size(159, 71);
             this.btn_Pay_fMain.TabIndex = 8;
             this.btn_Pay_fMain.Text = "Thanh Toán";
-            this.btn_Pay_fMain.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.btn_Pay_fMain.Click += new System.EventHandler(this.btn_Pay_fMain_Click);
             // 
             // btn_SwitchTable_fMain
             // 
@@ -195,7 +195,7 @@
             this.btn_SwitchTable_fMain.Size = new System.Drawing.Size(170, 46);
             this.btn_SwitchTable_fMain.TabIndex = 7;
             this.btn_SwitchTable_fMain.Text = "Chuyển";
-            this.btn_SwitchTable_fMain.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.btn_SwitchTable_fMain.Click += new System.EventHandler(this.btn_SwitchTable_fMain_Click);
             // 
             // btn_AddFood_fMain
             // 
@@ -207,7 +207,7 @@
             this.btn_AddFood_fMain.Size = new System.Drawing.Size(156, 54);
             this.btn_AddFood_fMain.TabIndex = 6;
             this.btn_AddFood_fMain.Text = "Thêm Món";
-            this.btn_AddFood_fMain.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btn_AddFood_fMain.Click += new System.EventHandler(this.btn_AddFood_fMain_Click);
             // 
             // spinEdit_Discount_fMain
             // 
@@ -282,7 +282,7 @@
             this.lookUpEdit_chooseCategory_fMain.Properties.NullText = "-- Chọn danh mục --";
             this.lookUpEdit_chooseCategory_fMain.Size = new System.Drawing.Size(217, 28);
             this.lookUpEdit_chooseCategory_fMain.TabIndex = 1;
-            this.lookUpEdit_chooseCategory_fMain.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
+            this.lookUpEdit_chooseCategory_fMain.EditValueChanged += new System.EventHandler(this.lookUpEdit_chooseCategory_fMain_EditValueChanged);
             // 
             // flowLayoutPanel_Table_fMain
             // 
