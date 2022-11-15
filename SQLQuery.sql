@@ -106,6 +106,7 @@ INSERT INTO CategoryFood (Name) VALUES (N'Đồ ăn vặt')
 INSERT INTO CategoryFood (Name) VALUES (N'Thức uống khác')
 INSERT INTO CategoryFood (Name) VALUES (N'Nước ép trái cây')
 INSERT INTO CategoryFood (Name) VALUES (N'Trà sữa')
+INSERT INTO CategoryFood (Name) VALUES (N'Đồ uống có cồn')
 GO
 -- ==================================================================================================================================
 -- INSERT INTO Food
@@ -129,6 +130,11 @@ INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Trà sữa Matcha', 5, 2000
 INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Trà sữa Việt quất', 5, 24000)
 INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Capuchino', 5, 25000)
 INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Macchiato', 5, 25000)
+INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Bia Sài Gòn', 6, 13000)
+INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Bia Hà Nội', 6, 13000)
+INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Bia Tiger', 6, 17000)
+INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Bia Heineken', 6, 20000)
+INSERT INTO Food (Name, CategoryID, Price) VALUES (N'Bia Budweiser', 6, 25000)
 GO
 -- ==================================================================================================================================
 -- INSERT INTO Bill
