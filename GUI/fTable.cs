@@ -87,39 +87,6 @@ namespace GUI
             }
             barButtonItem2.Enabled = false;
         }
-        private void gvTable_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
-            GridView view = sender as GridView;
-            string name = view.GetRowCellValue(e.RowHandle, view.Columns[1]).ToString();
-            if (name == "")
-            {
-                XtraMessageBox.Show("Tên bàn không hợp lệ", "Lỗi");
-                return;
-            }
-
-            for (int i = 0; i < gvTable.RowCount - 1; i++)
-            {
-                if (name.Equals(gvTable.GetRowCellValue(i, gvTable.Columns[1]).ToString()))
-                {
-                    string curTable = "";
-                    XtraMessageBox.Show("Tên bàn này đã tồn tại!");
-                    gvTable.SetRowCellValue(gvTable.FocusedRowHandle, gvTable.Columns[1], curTable);
-                    return;
-                }
-            }
-            int id = (int)view.GetRowCellValue(e.RowHandle, view.Columns[0]);
-            if (Table_BUS.Request.UpdateTable(id, name))
-            {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                LoadTable();
-                SplashScreenManager.CloseForm();
-            }
-            else
-            {
-                SplashScreenManager.CloseForm();
-                XtraMessageBox.Show("Sửa thông tin bàn thất bại!!", "Lỗi");
-            }
-        }
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadTable();
