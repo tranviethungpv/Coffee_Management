@@ -52,6 +52,7 @@ namespace GUI
             Account account = new Account(text_login_fLogin.Text, text_password_fLogin.Text);
             if (Account_BUS.Request.CheckLogin(account))
             {
+                
                 Account acc = Account_BUS.Request.GetAccountByUserName(account.Username);
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fManager fManager = new fManager(acc);

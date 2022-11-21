@@ -133,6 +133,7 @@ namespace GUI
             else
             {
                 fAccount f = new fAccount();
+                f.LoginUserName = acc.Username;
                 f.MdiParent = this;
                 f.Show();
             }
